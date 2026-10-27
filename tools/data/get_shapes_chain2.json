@@ -1,0 +1,129 @@
+{
+ "/api/device/": {
+  "status": 200,
+  "params": [
+   "id"
+  ],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "count": {
+     "type": "integer"
+    },
+    "next": {
+     "nullable": true
+    },
+    "previous": {
+     "nullable": true
+    },
+    "results": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "string"
+       },
+       "osVersion": {
+        "type": "string"
+       },
+       "referrer": {
+        "type": "string"
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/device-setting/": {
+  "status": 200,
+  "params": [
+   "device"
+  ],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "count": {
+     "type": "integer"
+    },
+    "next": {
+     "nullable": true
+    },
+    "previous": {
+     "nullable": true
+    },
+    "results": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "integer"
+       },
+       "field": {
+        "type": "object",
+        "properties": {
+         "id": {
+          "type": "integer"
+         },
+         "name": {
+          "type": "string"
+         },
+         "display": {
+          "nullable": true
+         },
+         "table": {
+          "type": "string"
+         },
+         "category": {
+          "nullable": true
+         },
+         "is_filter": {
+          "nullable": true
+         }
+        }
+       },
+       "value": {
+        "type": "boolean"
+       },
+       "start_dt": {
+        "type": "string"
+       },
+       "end_dt": {
+        "nullable": true
+       },
+       "notes": {
+        "nullable": true
+       },
+       "device": {
+        "type": "string"
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/user/bio/": {
+  "status": 400,
+  "params": [
+   "user"
+  ],
+  "note": "No user ID"
+ },
+ "/api/user/member/": {
+  "status": 400,
+  "params": [
+   "user"
+  ],
+  "note": "No identifier"
+ },
+ "/api/creator-subscription-config/": {
+  "status": 400,
+  "params": [
+   "creator"
+  ],
+  "note": "{\"message\":\"CreatorSubscriptionConfigView GET: Failed - Failed to get Stripe plans for creator: 'NoneType' object has no"
+ }
+}

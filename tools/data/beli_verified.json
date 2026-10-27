@@ -1,0 +1,115 @@
+{
+  "basics": [
+    "Base host: Beli's Cloud Run API. Login is on a separate onboarding host; the SDK's `connect(email, password)` handles both.",
+    "Every request needs an `Origin` header (the SDK sends `https://localhost`); without it the server returns 403.",
+    "Auth: `Authorization: Bearer <access JWT>` from `POST /api/token/`. Refresh tokens are not rotated.",
+    "Framework is Django REST Framework: list endpoints return `{count, next, previous, results}`, some return `{results}` only or a bare array.",
+    "Missing required query parameters give HTTP 400 with the plain body `Missing parameters`.",
+    "Throttling: bursts return HTTP 429. Spacing writes about 5-6 seconds apart and caching search results avoided it.",
+    "Tested against app API snapshot v9.8.1. The SDK's generated parsers crash on empty 200 bodies, so use raw httpx requests (`c.get_httpx_client().request(**module._get_kwargs(...))`) for writes.",
+    "Feature flags: the app appends boolean query flags to many guide calls (`playlists_v2`, `vguides`, `supports_no_guide_category`, `supports_no_guide_city`, `supports_collab_guides`, `supports_ask_for_recs_guides[_1|_2]`, `supports_auto_bookmark`). The server hides data from callers that omit them: `/api/user-guide/` returns an empty list without them.",
+    "Guide write details marked 'from app code' were read from the decompiled Beli 10.2.0 web bundle (Capacitor/Angular app) and have not been executed."
+  ],
+  "verified": [
+    {
+      "ep": "POST /api/token/",
+      "status": "works",
+      "note": "Email + password login returns an access/refresh token pair. 401 on a wrong password."
+    },
+    {
+      "ep": "GET /api/search-app/",
+      "status": "works",
+      "note": "Query params `term` and `city` (e.g. `Tokyo, Japan`). Returns candidates with `business` id and `structured_formatting` (`main_text`, `secondary_text` address). Always check the address region, since top hits can be the wrong city."
+    },
+    {
+      "ep": "GET /api/get-bookmark/",
+      "status": "works",
+      "note": "Requires BOTH `user` (uuid) and `category` query params, otherwise 400 `Missing parameters`. Category values are Beli's three-letter codes (`RES` for restaurants)."
+    },
+    {
+      "ep": "POST /api/add-bookmark/",
+      "status": "works (writes)",
+      "note": "JSON body `{user_id, business_id}`. Returns HTTP 200 with an EMPTY body, which crashes the SDK's JSON parser. 84 places bookmarked this way. Idempotent: re-adding does not duplicate."
+    },
+    {
+      "ep": "GET /api/bookmark-status/{uuid}/{business_id}/",
+      "status": "works",
+      "note": "Path-parameter endpoint. Use it to confirm a bookmark landed."
+    },
+    {
+      "ep": "GET /api/user/logged-in/",
+      "status": "works",
+      "note": "Returns the signed-in user object (id, username, name). The id/username shape may be wrapped in `results`, sometimes as a list; unwrap defensively."
+    },
+    {
+      "ep": "GET /api/published-list/",
+      "status": "works, not what it seems",
+      "note": "Returns Beli's own curated lists (927 of them: `Top 10 LA Spanish` and so on), identical for every user_id. It is NOT the user's own guides."
+    },
+    {
+      "ep": "GET /api/published-list/{uuid}/",
+      "status": "works",
+      "note": "Returns `{count, results}` of lists published by that user. Empty for accounts with no published lists, which is not the same as having no guides."
+    },
+    {
+      "ep": "GET /api/short-list/{uuid}/",
+      "status": "works",
+      "note": "Returned an empty array for the tested account."
+    },
+    {
+      "ep": "GET /api/user-guide/",
+      "status": "works (verified)",
+      "note": "Query `user_id` plus the app's flags: `supports_no_guide_category=true&supports_no_guide_city=true&supports_collab_guides=true` (the app also sends `supports_ask_for_recs_guides`, `_1`, `_2`). Without the flags it returned an empty list. Returns each guide: `id`, `name`, `full_title`, `hscroll_title`, `subtitle`, `description`, `audience` (PUBLIC/PRIVATE), `is_draft`, `list_field`, `category`, `city`, `is_collaborative`, `collaborators`, `is_owner`, `total_count`, `can_add_items`, `can_delete`, `can_reorder`. Confirmed on a live account: 6 guides with titles."
+    },
+    {
+      "ep": "GET /api/user-guide-items/",
+      "status": "works (verified)",
+      "note": "Query `user_id` plus `supports_no_guide_category=true&supports_no_guide_city=true&supports_collab_guides=true`. Returns `{results:[{business, guide, added_by{...}}]}`, 125 items over 6 guides. `guide` is the numeric id from `/api/user-guide/`."
+    },
+    {
+      "ep": "POST /api/user-guide/",
+      "status": "from app code, NOT run",
+      "note": "Creates a guide. Query flags `supports_no_guide_category=true&supports_no_guide_city=true&supports_collab_guides=true`. JSON body: `{config:{name, description, user, list_field, city_id, city_name, category, audience:'PUBLIC'|'PRIVATE', is_draft, collaborator_ids?}, user_id}`. Response has a `playlist` object (the new guide)."
+    },
+    {
+      "ep": "PUT /api/update-user-guide/{guide_id}/",
+      "status": "from app code, NOT run",
+      "note": "Edits guide fields (the app uses it for e.g. `{is_newly_unlocked:false}`). Query flags `playlists_v2=true&vguides=true&supports_no_guide_category=true&supports_no_guide_city=true&supports_collab_guides=true`. Body: the fields to change."
+    },
+    {
+      "ep": "PUT /api/user-guide-items/",
+      "status": "from app code, NOT run",
+      "note": "Edits or removes one place in a guide. Query flags `playlists_v2=true&vguides=true&supports_no_guide_category=true&supports_no_guide_city=true`. Body: `{user, business, guide, ...fields}`. Remove from guide: fields = `{end_dt: <now>}`. Change category: `{category}`. Re-add or touch: `{}`."
+    },
+    {
+      "ep": "POST /api/user-guide-items/",
+      "status": "from app code, NOT run",
+      "note": "Adds places to guides in bulk (the app's custom-field-values call with the guide flag). Query flags `playlists_v2=true&vguides=true&supports_no_guide_category=true&supports_no_guide_city=true&supports_auto_bookmark=true`. Body: array of `{user, business, field:<guide id>, value:true, isUserGuide:true, guide:<guide id>, category}`. Response may include `auto_bookmarked_businesses`."
+    },
+    {
+      "ep": "GET /api/user-guide-list-view/",
+      "status": "from app code, NOT run",
+      "note": "Full contents of one guide. Query `list_id=<guide id>&viewer=<your uuid>&check_user_access=false` plus `playlists_v2`, `vguides`, `supports_no_guide_category`, `supports_no_guide_city`. Add `refresh=true` to bypass cache. Returns `{results:[...], access}`; `access` can be `private` or `blocked`."
+    },
+    {
+      "ep": "GET /api/user-guide-city-options/",
+      "status": "from app code, NOT run",
+      "note": "Query `user=<your uuid>`. City choices offered when creating a guide."
+    },
+    {
+      "ep": "GET /api/user-guide-items-close/",
+      "status": "from app code, NOT run",
+      "note": "Removes a business from guides: `?user=<uuid>&business=<id>&playlists_v2=true&vguides=true&supports_no_guide_category=true&supports_no_guide_city=true`."
+    },
+    {
+      "ep": "GET/POST /api/collab-guide-user-suggestions/, collab guide invite and leave calls",
+      "status": "from app code, NOT run",
+      "note": "Collaborative guides: `collab-guide-user-suggestions/?user=<uuid>&page=&page_size=&guide_id=`. Invite and leave endpoints exist (`postCollabGuideLeave`); bodies not extracted."
+    },
+    {
+      "ep": "GET /api/playlists/",
+      "status": "needs params",
+      "note": "400 `Missing parameters` for `user`, `user_id`, and `user` + `category`. The app's equivalents are `user-guide`, `playlist-list-view` and `update-playlist/{id}/`; `playlists_v2=true` is a feature flag sent on many calls."
+    }
+  ]
+}

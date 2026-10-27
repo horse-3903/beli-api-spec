@@ -1,0 +1,6672 @@
+{
+ "/api/app-rank/{uuid}/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "string"
+  }
+ },
+ "/api/check-user-settings/": {
+  "status": 400,
+  "params": [
+   "user"
+  ],
+  "note": "no identifier"
+ },
+ "/api/count-ranked-this-year/{uuid}/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "integer"
+  }
+ },
+ "/api/datauserinteger/": {
+  "status": 200,
+  "params": [
+   "user"
+  ],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "count": {
+     "type": "integer"
+    },
+    "next": {
+     "nullable": true
+    },
+    "previous": {
+     "nullable": true
+    },
+    "results": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "integer"
+       },
+       "start_dt": {
+        "type": "string"
+       },
+       "end_dt": {
+        "nullable": true
+       },
+       "value": {
+        "type": "integer"
+       },
+       "field": {
+        "type": "integer"
+       },
+       "user": {
+        "type": "string"
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/glassfy-config/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "config": {
+     "type": "object",
+     "properties": {
+      "SKU": {
+       "type": "string"
+      },
+      "IOS_SKU": {
+       "type": "string"
+      },
+      "ANDROID_SKU": {
+       "type": "string"
+      },
+      "PERMISSION": {
+       "type": "string"
+      }
+     }
+    },
+    "restoreStreakConfig": {
+     "type": "object",
+     "properties": {
+      "SKU": {
+       "type": "string"
+      },
+      "IOS_SKU": {
+       "type": "string"
+      },
+      "ANDROID_SKU": {
+       "type": "string"
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/has-contacts/{uuid}/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "boolean"
+  }
+ },
+ "/api/invites-feature-progress/{uuid}/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "feature_config": {
+     "type": "object",
+     "properties": {
+      "feature_hscroll": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "icon_src": {
+          "type": "string"
+         },
+         "title": {
+          "type": "string"
+         },
+         "gated_feature_flag": {
+          "type": "string"
+         },
+         "unlock_feature_flag": {
+          "type": "string"
+         },
+         "text_param_key": {
+          "type": "string"
+         },
+         "unlock_feature_flags": {
+          "type": "array",
+          "items": {
+           "type": "string"
+          }
+         },
+         "override_feature_credits_required": {
+          "type": "integer"
+         }
+        }
+       }
+      },
+      "unlocked_icon": {
+       "type": "string"
+      },
+      "unlocked_icon_color": {
+       "type": "string"
+      },
+      "unlocked_text_color": {
+       "type": "string"
+      },
+      "locked_text_color": {
+       "type": "string"
+      },
+      "cardSubtitleText": {
+       "type": "string"
+      },
+      "cardTitleText": {
+       "type": "string"
+      },
+      "hideProgressCard": {
+       "type": "boolean"
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/invites-remaining/{uuid}/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "integer"
+  }
+ },
+ "/api/number-params-before-user/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "map-zoom-threshold": {
+     "type": "number"
+    },
+    "get-current-location-timeout": {
+     "type": "integer"
+    },
+    "profile-photo-quality": {
+     "type": "integer"
+    },
+    "banner-move-content-outside-accordion-delay": {
+     "type": "integer"
+    },
+    "res-sharing-invite-sent-toast": {
+     "type": "integer"
+    },
+    "plated-screenshot-crop-top-bottom-ratio": {
+     "type": "number"
+    },
+    "plated-android-extra-top-padding-vh": {
+     "type": "number"
+    },
+    "comparison-business-popup-animation": {
+     "type": "integer"
+    },
+    "list-page-loading-map-reservations": {
+     "type": "integer"
+    },
+    "plated-background-photo-load-timeout": {
+     "type": "integer"
+    },
+    "plated-placeholder-dots-length": {
+     "type": "integer"
+    },
+    "plated-match-glance-margin-top-vh-small": {
+     "type": "number"
+    },
+    "plated-icon-message-2024-top-vh-small": {
+     "type": "number"
+    },
+    "plated-goal-progress-2025-top-vh": {
+     "type": "integer"
+    },
+    "plated-goal-progress-2025-top-vh-android": {
+     "type": "integer"
+    },
+    "trigger-plated-preloading": {
+     "type": "number"
+    },
+    "plated-summary-2024-margin-top-vh-android": {
+     "type": "integer"
+    },
+    "plated-summary-margin-top-plated-2025-android": {
+     "type": "number"
+    },
+    "min_recs_expected_percentile": {
+     "type": "number"
+    },
+    "cookie-settings-saved-toast": {
+     "type": "integer"
+    },
+    "cancel-invite-loading-timeout": {
+     "type": "integer"
+    },
+    "undo-cancel-invite-loading-timeout": {
+     "type": "integer"
+    },
+    "show_follow_prompt_minimum_following_threshold_with_hscroll": {
+     "type": "integer"
+    },
+    "show_follow_prompt_minimum_following_threshold_without_hscroll": {
+     "type": "integer"
+    },
+    "hscroll_display_max": {
+     "type": "integer"
+    },
+    "feed-hscroll-following-threshold": {
+     "type": "integer"
+    },
+    "force-hide-milestone-rank-collage": {
+     "type": "integer"
+    },
+    "photo_url_loading_timeout": {
+     "type": "integer"
+    },
+    "share-screenshot-top-bottom-ratio-android": {
+     "type": "number"
+    },
+    "share-screenshot-top-bottom-ratio": {
+     "type": "number"
+    },
+    "playlist-screenshot-crop-top-bottom-ratio-android": {
+     "type": "number"
+    },
+    "playlist-screenshot-crop-top-bottom-ratio": {
+     "type": "number"
+    },
+    "custom-guide-wait-for-city-hierarchy-loading": {
+     "type": "string"
+    },
+    "rank-button-popover-vertical-scroll-height-px": {
+     "type": "number"
+    },
+    "rank-button-popover-vertical-scroll-height-px-small": {
+     "type": "number"
+    },
+    "ask-for-recs-post-loading": {
+     "type": "integer"
+    },
+    "shared-meals-milestone-individual-crop-top-bottom-ratio": {
+     "type": "number"
+    },
+    "shared-meals-milestone-group-crop-top-bottom-ratio": {
+     "type": "number"
+    },
+    "shared-meals-milestone-individual-crop-top-bottom-ratio-android": {
+     "type": "number"
+    },
+    "shared-meals-milestone-group-crop-top-bottom-ratio-android": {
+     "type": "number"
+    },
+    "taste-profile-update-delay": {
+     "type": "integer"
+    },
+    "search-res-time-window-before-minutes": {
+     "type": "integer"
+    },
+    "search-res-time-window-after-minutes": {
+     "type": "integer"
+    },
+    "attestation-timeout-ms": {
+     "type": "integer"
+    },
+    "assertion-generate-timeout-ms": {
+     "type": "integer"
+    },
+    "android-assertion-generate-timeout-ms": {
+     "type": "integer"
+    },
+    "assertion-keyid-backfill-enabled": {
+     "type": "integer"
+    },
+    "post-rank-popup-config-wait-timeout": {
+     "type": "integer"
+    },
+    "post-rank-keep-score-config-refetch-timeout": {
+     "type": "integer"
+    },
+    "next-challenge-year": {
+     "type": "integer"
+    },
+    "annual-challenge-year": {
+     "type": "integer"
+    },
+    "load_list_reservation_search_results_initial": {
+     "type": "integer"
+    },
+    "load_more_reservation_search_results_count": {
+     "type": "integer"
+    },
+    "load_more_reservation_search_results_threshold": {
+     "type": "integer"
+    },
+    "map-padding-top": {
+     "type": "integer"
+    },
+    "map-padding-bottom": {
+     "type": "integer"
+    },
+    "map-padding-left": {
+     "type": "integer"
+    },
+    "map-padding-right": {
+     "type": "integer"
+    },
+    "map_init_max_tries": {
+     "type": "integer"
+    },
+    "map-start-event-search-here-delay": {
+     "type": "integer"
+    }
+   }
+  }
+ },
+ "/api/number-params/{uuid}/": {
+  "status": 200,
+  "params": [
+   "playlists_v2"
+  ],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "photo-quality": {
+     "type": "integer"
+    },
+    "photo-height": {
+     "type": "integer"
+    },
+    "photo-width": {
+     "type": "integer"
+    },
+    "increase-milestone-frequency-threshold": {
+     "type": "integer"
+    },
+    "terms-save-permission-loading-state": {
+     "type": "integer"
+    },
+    "custom-guide-wait-for-city-hierarchy-loading": {
+     "type": "string"
+    },
+    "share-feed-item-create-screenshot-scale-param": {
+     "type": "number"
+    },
+    "ACCESS_GATED_RES_SHARING_min_credits": {
+     "type": "integer"
+    },
+    "next-challenge-year": {
+     "type": "integer"
+    },
+    "annual-challenge-year": {
+     "type": "integer"
+    },
+    "recs_force_personalized_number": {
+     "type": "integer"
+    },
+    "places-search-debounce": {
+     "type": "integer"
+    },
+    "max_share_select_items": {
+     "type": "integer"
+    },
+    "app-rank-min-ranked": {
+     "type": "integer"
+    },
+    "playlists-unlock-length-min": {
+     "type": "integer"
+    },
+    "rank-markers-max": {
+     "type": "integer"
+    },
+    "bookmarked-markers-max": {
+     "type": "integer"
+    },
+    "persistent-photo-loading-duration": {
+     "type": "integer"
+    },
+    "photo-sync-fullroll-start-offset": {
+     "type": "integer"
+    }
+   }
+  }
+ },
+ "/api/profile-progress/{uuid}/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "show_checklist": {
+     "type": "boolean"
+    },
+    "items": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "key": {
+        "type": "string"
+       },
+       "title": {
+        "type": "string"
+       },
+       "body": {
+        "type": "string"
+       },
+       "cta": {
+        "type": "string"
+       },
+       "action": {
+        "type": "string"
+       },
+       "icon": {
+        "type": "string"
+       },
+       "completed": {
+        "type": "boolean"
+       },
+       "suggestions": {
+        "type": "array",
+        "items": {}
+       },
+       "progress": {
+        "type": "integer"
+       },
+       "total": {
+        "type": "integer"
+       },
+       "has_progress": {
+        "type": "boolean"
+       }
+      }
+     }
+    },
+    "completed_count": {
+     "type": "integer"
+    },
+    "total_count": {
+     "type": "integer"
+    }
+   }
+  }
+ },
+ "/api/sharesheet-config/": {
+  "status": 200,
+  "params": [
+   "user"
+  ],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "null": {
+     "type": "object",
+     "properties": {
+      "image": {
+       "type": "object",
+       "properties": {
+        "default": {
+         "type": "object",
+         "properties": {
+          "share_options": {
+           "type": "array",
+           "items": {
+            "type": "object"
+           }
+          },
+          "show_copy_profile_link": {
+           "type": "boolean"
+          }
+         }
+        },
+        "plated": {
+         "type": "object",
+         "properties": {
+          "share_options": {
+           "type": "array",
+           "items": {
+            "type": "object"
+           }
+          },
+          "show_copy_profile_link": {
+           "type": "boolean"
+          }
+         }
+        },
+        "table_rating": {
+         "type": "object",
+         "properties": {
+          "share_options": {
+           "type": "array",
+           "items": {
+            "type": "object"
+           }
+          },
+          "show_copy_profile_link": {
+           "type": "boolean"
+          }
+         }
+        },
+        "collab-guide-created": {
+         "type": "object",
+         "properties": {
+          "share_options": {
+           "type": "array",
+           "items": {
+            "type": "object"
+           }
+          },
+          "show_copy_profile_link": {
+           "type": "boolean"
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/taste-profile-config/{uuid}/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "config": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "type": {
+        "type": "string"
+       },
+       "title_1": {
+        "type": "string"
+       },
+       "title_2": {
+        "type": "string"
+       },
+       "title_3_icon": {
+        "type": "string"
+       },
+       "title_3": {
+        "type": "string"
+       },
+       "number_1": {
+        "type": "string"
+       },
+       "number_1_subtitle_icon_src": {
+        "type": "string"
+       },
+       "number_1_subtitle": {
+        "type": "string"
+       },
+       "number_2": {
+        "type": "string"
+       },
+       "number_2_subtitle_icon": {
+        "type": "string"
+       },
+       "number_2_subtitle": {
+        "type": "string"
+       },
+       "title_4": {
+        "type": "string"
+       },
+       "background_color": {
+        "type": "string"
+       },
+       "title_1_text_color": {
+        "type": "string"
+       },
+       "title_2_text_color": {
+        "type": "string"
+       },
+       "title_3_text_color": {
+        "type": "string"
+       },
+       "number_1_text_color": {
+        "type": "string"
+       },
+       "number_1_subtitle_text_color": {
+        "type": "string"
+       },
+       "number_2_text_color": {
+        "type": "string"
+       },
+       "number_2_subtitle_text_color": {
+        "type": "string"
+       },
+       "title_4_text_color": {
+        "type": "string"
+       },
+       "logo_color": {
+        "type": "string"
+       },
+       "share_button_color": {
+        "type": "string"
+       },
+       "shareBackground": {
+        "type": "string"
+       },
+       "shareTransform": {
+        "type": "string"
+       },
+       "overrideShareHeaderColor": {
+        "type": "string"
+       },
+       "hide_share_icon": {
+        "type": "boolean"
+       },
+       "viewer_mode": {
+        "type": "string"
+       },
+       "is_locked": {
+        "type": "boolean"
+       },
+       "locked_icon_src": {
+        "type": "string"
+       },
+       "days": {
+        "type": "object",
+        "properties": {
+         "2026-10-27": {
+          "type": "object",
+          "properties": {
+           "count": {
+            "type": "integer"
+           },
+           "photo_url": {
+            "nullable": true
+           },
+           "rankings": {
+            "type": "array",
+            "items": {
+             "type": "object"
+            }
+           },
+           "achievements": {
+            "type": "array",
+            "items": {}
+           },
+           "first_category": {
+            "type": "string"
+           }
+          }
+         },
+         "2026-10-26": {
+          "type": "object",
+          "properties": {
+           "count": {
+            "type": "integer"
+           },
+           "photo_url": {
+            "nullable": true
+           },
+           "rankings": {
+            "type": "array",
+            "items": {
+             "type": "object"
+            }
+           },
+           "achievements": {
+            "type": "array",
+            "items": {
+             "type": "string"
+            }
+           },
+           "first_category": {
+            "type": "string"
+           }
+          }
+         },
+         "2026-10-15": {
+          "type": "object",
+          "properties": {
+           "count": {
+            "type": "integer"
+           },
+           "photo_url": {
+            "nullable": true
+           },
+           "rankings": {
+            "type": "array",
+            "items": {
+             "type": "object"
+            }
+           },
+           "achievements": {
+            "type": "array",
+            "items": {}
+           },
+           "first_category": {
+            "type": "string"
+           }
+          }
+         },
+         "2026-10-11": {
+          "type": "object",
+          "properties": {
+           "count": {
+            "type": "integer"
+           },
+           "photo_url": {
+            "type": "string"
+           },
+           "rankings": {
+            "type": "array",
+            "items": {
+             "type": "object"
+            }
+           },
+           "achievements": {
+            "type": "array",
+            "items": {}
+           },
+           "first_category": {
+            "type": "string"
+           }
+          }
+         },
+         "2026-10-07": {
+          "type": "object",
+          "properties": {
+           "count": {
+            "type": "integer"
+           },
+           "photo_url": {
+            "nullable": true
+           },
+           "rankings": {
+            "type": "array",
+            "items": {
+             "type": "object"
+            }
+           },
+           "achievements": {
+            "type": "array",
+            "items": {}
+           },
+           "first_category": {
+            "type": "string"
+           }
+          }
+         }
+        }
+       },
+       "year": {
+        "type": "integer"
+       },
+       "month": {
+        "type": "integer"
+       },
+       "month_label": {
+        "type": "string"
+       },
+       "today_local_date": {
+        "type": "string"
+       },
+       "week_streak": {
+        "type": "integer"
+       },
+       "first_rank_month": {
+        "type": "string"
+       },
+       "title": {
+        "type": "string"
+       },
+       "subtitle": {
+        "type": "string"
+       },
+       "title_text_color": {
+        "type": "string"
+       },
+       "subtitle_text_color": {
+        "type": "string"
+       },
+       "border": {
+        "type": "string"
+       },
+       "image": {
+        "type": "string"
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/text-params-before-user/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "supper_club_invite_join_button": {
+     "type": "string"
+    },
+    "onboarding_explain_judy_subheader_1": {
+     "type": "string"
+    },
+    "login_api_error": {
+     "type": "string"
+    },
+    "login_page_secondary_button": {
+     "type": "string"
+    },
+    "photo_host": {
+     "type": "string"
+    },
+    "explain_rank_category_selector_body": {
+     "type": "string"
+    },
+    "explain_sc_invite_expiration_primary_button": {
+     "type": "string"
+    },
+    "invalid_res_sharing_business_title_body": {
+     "type": "string"
+    },
+    "tutorial-list-p1": {
+     "type": "string"
+    },
+    "tutorial-list-p3": {
+     "type": "string"
+    },
+    "photo-quality": {
+     "type": "string"
+    },
+    "photo-height": {
+     "type": "string"
+    },
+    "photo-width": {
+     "type": "string"
+    },
+    "input_invalid_photo": {
+     "type": "string"
+    },
+    "onboarding_cuisines_page_header": {
+     "type": "string"
+    },
+    "explain_recs_secondary_button": {
+     "type": "string"
+    },
+    "explain_recs_body": {
+     "type": "string"
+    },
+    "explain_mutual_bookmarks_title": {
+     "type": "string"
+    },
+    "reservation_claimed_text_message_call_to_action": {
+     "type": "string"
+    },
+    "school_onboarding_invite_header": {
+     "type": "string"
+    },
+    "update-prompt-button": {
+     "type": "string"
+    },
+    "reservation-home-card-prompt": {
+     "type": "string"
+    },
+    "share_image_text": {
+     "type": "string"
+    },
+    "favorite_dish_icon": {
+     "type": "string"
+    },
+    "reservation_claim_confirm_header": {
+     "type": "string"
+    },
+    "recently_searched_users_clear_confirm_title": {
+     "type": "string"
+    },
+    "explain_no_friend_recs_body": {
+     "type": "string"
+    },
+    "member_search_cta_top_members_title": {
+     "type": "string"
+    },
+    "notifications_page_empty_state_body": {
+     "type": "string"
+    },
+    "import_from_plain_text_button": {
+     "type": "string"
+    },
+    "edit_profile_add_photo_button": {
+     "type": "string"
+    },
+    "edit_profile_change_photo_button": {
+     "type": "string"
+    },
+    "thank_you_for_suggestion_toast": {
+     "type": "string"
+    },
+    "COF_singular": {
+     "type": "string"
+    },
+    "COF_plural": {
+     "type": "string"
+    },
+    "your_score_popover_body_COF": {
+     "type": "string"
+    },
+    "your_score_popover_body_locked_COF": {
+     "type": "string"
+    },
+    "unlocked_scores_toast_coffee & tea": {
+     "type": "string"
+    },
+    "company_onboarding_invite_header": {
+     "type": "string"
+    },
+    "account_settings_email_label": {
+     "type": "string"
+    },
+    "members_photos_section_header": {
+     "type": "string"
+    },
+    "reservation_info_join_button_new": {
+     "type": "string"
+    },
+    "review_reservation_share_details_subheader": {
+     "type": "string"
+    },
+    "report_problem_button": {
+     "type": "string"
+    },
+    "reservation_history_report_issue_claimed_placeholder": {
+     "type": "string"
+    },
+    "reservation_history_report_issue_shared_placeholder": {
+     "type": "string"
+    },
+    "reservation_priority_level_popover_body": {
+     "type": "string"
+    },
+    "share_reservation_page_subtitle": {
+     "type": "string"
+    },
+    "share_to_ig_feed_url_scheme": {
+     "type": "string"
+    },
+    "leaderboard_invite_school_members_header": {
+     "type": "string"
+    },
+    "verification_success_to_leaderboards": {
+     "type": "string"
+    },
+    "verification_success_done": {
+     "type": "string"
+    },
+    "reservation_history_available_explanation": {
+     "type": "string"
+    },
+    "member_search_empty_state_title": {
+     "type": "string"
+    },
+    "member_seach_friends_selector_empty_state_body": {
+     "type": "string"
+    },
+    "referral_college_comp_push_title": {
+     "type": "string"
+    },
+    "input_placeholder_comment": {
+     "type": "string"
+    },
+    "sc_notify_expiring_nom_notif_push_body": {
+     "type": "string"
+    },
+    "full_year_monthly_recap_favorite_dish_subtitle_1": {
+     "type": "string"
+    },
+    "plated_intro_body": {
+     "type": "string"
+    }
+   }
+  }
+ },
+ "/api/text-params/{uuid}/": {
+  "status": 200,
+  "params": [
+   "playlists_v2"
+  ],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "reservation_issue_report_no_show_fee_button": {
+     "type": "string"
+    },
+    "prompt_share_high_rank_title": {
+     "type": "string"
+    },
+    "last_chance_streak_restore_push_title": {
+     "type": "string"
+    },
+    "claimed_res_issue_option_faq": {
+     "type": "string"
+    },
+    "explain_been_list_body": {
+     "type": "string"
+    },
+    "add_verification_code_placeholder": {
+     "type": "string"
+    },
+    "add_company_email_placeholder": {
+     "type": "string"
+    },
+    "reservation_issue_text_claimer_button": {
+     "type": "string"
+    },
+    "reservation_info_marketplace_intro_body": {
+     "type": "string"
+    },
+    "monthly_recaps_intro_body": {
+     "type": "string"
+    },
+    "category_emoji_map_marker_BAR": {
+     "type": "string"
+    },
+    "rank_leaderboard_industry_explanation": {
+     "type": "string"
+    },
+    "invite_text_with_referral": {
+     "type": "string"
+    },
+    "special_event_name_public_1048131": {
+     "type": "string"
+    },
+    "welcome_to_school_comp_additional_invites": {
+     "type": "string"
+    },
+    "invite_text_with_referral_link": {
+     "type": "string"
+    },
+    "waitlisted_twilio_text": {
+     "type": "string"
+    },
+    "monthly_recaps_home_page_banner": {
+     "type": "string"
+    },
+    "prompt_share_high_rank_title_10": {
+     "type": "string"
+    },
+    "support-number": {
+     "type": "string"
+    },
+    "reservation_issue_cancel_reservation_button": {
+     "type": "string"
+    },
+    "calendar_permissions_in_app_secondary_button": {
+     "type": "string"
+    },
+    "prompt_share_high_rank_min_version": {
+     "type": "string"
+    },
+    "annual_challenge_min_version_2024": {
+     "type": "string"
+    },
+    "cookie_center_flag_name": {
+     "type": "string"
+    },
+    "ios_ig_story_key": {
+     "type": "string"
+    },
+    "reservation_issue_report_claimer_button": {
+     "type": "string"
+    },
+    "reservation_issue_report_issue_button": {
+     "type": "string"
+    },
+    "reservation_issue_text_poster_button": {
+     "type": "string"
+    },
+    "claim_invalid_payment_toast": {
+     "type": "string"
+    },
+    "claim_invalid_all_toast": {
+     "type": "string"
+    },
+    "reservation_info_share_explanation_body": {
+     "type": "string"
+    },
+    "reservation_issue_report_poster_button": {
+     "type": "string"
+    },
+    "monthly_recap_inapp_body_10": {
+     "type": "string"
+    },
+    "monthly_recap_inapp_post_update_body_3": {
+     "type": "string"
+    },
+    "top_new_user_monthly_recap_share_body": {
+     "type": "string"
+    },
+    "monthly_recap_popup_title_1": {
+     "type": "string"
+    },
+    "monthly_recap_popup_title_2": {
+     "type": "string"
+    },
+    "monthly_recap_popup_title_3": {
+     "type": "string"
+    },
+    "monthly_recap_popup_title_4": {
+     "type": "string"
+    },
+    "monthly_recap_popup_title_5": {
+     "type": "string"
+    },
+    "shared_res_issue_option_faq": {
+     "type": "string"
+    },
+    "policy_update_popup_alert_min_version": {
+     "type": "string"
+    },
+    "monthly_recap_popup_title_13": {
+     "type": "string"
+    },
+    "monthly_recap_popup_title_14": {
+     "type": "string"
+    },
+    "monthly_recap_popup_post_update_title_1": {
+     "type": "string"
+    },
+    "monthly_recap_popup_post_update_title_2": {
+     "type": "string"
+    },
+    "monthly_recap_popup_post_update_title_3": {
+     "type": "string"
+    },
+    "monthly_recap_popup_post_update_title_4": {
+     "type": "string"
+    },
+    "monthly_recap_popup_post_update_title_5": {
+     "type": "string"
+    },
+    "monthly_recap_popup_post_update_title_7": {
+     "type": "string"
+    },
+    "monthly_recap_popup_post_update_title_8": {
+     "type": "string"
+    },
+    "monthly_recap_popup_post_update_title_9": {
+     "type": "string"
+    },
+    "monthly_recap_popup_post_update_title_10": {
+     "type": "string"
+    },
+    "monthly_recap_popup_post_update_title_11": {
+     "type": "string"
+    },
+    "monthly_recap_popup_body_5": {
+     "type": "string"
+    },
+    "monthly_recap_popup_body_7": {
+     "type": "string"
+    },
+    "ACCESS_CONTACTS_PRESELECTED_METRICS_ANDROID_START_DT": {
+     "type": "string"
+    },
+    "onboarding_are_you_sure_invite_friends_secondary_button_base": {
+     "type": "string"
+    },
+    "monthly_recap_popup_post_update_body_3": {
+     "type": "string"
+    }
+   }
+  }
+ },
+ "/api/trigger/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "count": {
+     "type": "integer"
+    },
+    "next": {
+     "nullable": true
+    },
+    "previous": {
+     "nullable": true
+    },
+    "results": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "integer"
+       },
+       "activity": {
+        "type": "string"
+       },
+       "variable": {
+        "type": "string"
+       },
+       "value": {
+        "nullable": true
+       },
+       "notification_type": {
+        "type": "string"
+       },
+       "event_type": {
+        "type": "string"
+       },
+       "audience": {
+        "type": "string"
+       },
+       "title": {
+        "type": "string"
+       },
+       "body": {
+        "type": "string"
+       },
+       "created_dt": {
+        "type": "string"
+       },
+       "active": {
+        "type": "boolean"
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/user-setting/": {
+  "status": 200,
+  "params": [
+   "user"
+  ],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "results": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "user": {
+        "type": "string"
+       },
+       "field": {
+        "type": "object",
+        "properties": {
+         "id": {
+          "type": "integer"
+         },
+         "name": {
+          "type": "string"
+         },
+         "display": {
+          "type": "string"
+         },
+         "table": {
+          "type": "string"
+         },
+         "category": {
+          "type": "string"
+         },
+         "is_filter": {
+          "nullable": true
+         }
+        }
+       },
+       "value": {
+        "type": "boolean"
+       },
+       "start_dt": {
+        "type": "string"
+       },
+       "end_dt": {
+        "nullable": true
+       }
+      }
+     }
+    },
+    "categories": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "code": {
+        "type": "string"
+       },
+       "display": {
+        "type": "string"
+       },
+       "icon": {
+        "type": "string"
+       },
+       "singular": {
+        "type": "string"
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/user/bio/": {
+  "status": 400,
+  "params": [],
+  "note": "No user ID"
+ },
+ "/api/user/member/": {
+  "status": 400,
+  "params": [],
+  "note": "No identifier"
+ },
+ "/api/user/streak/": {
+  "status": 200,
+  "params": [
+   "user"
+  ],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "result": {
+     "type": "integer"
+    },
+    "photo_data": {
+     "type": "object",
+     "properties": {
+      "field_name": {
+       "type": "string"
+      },
+      "photo": {
+       "type": "string"
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/all-cities/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "results": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "code": {
+     "type": "integer"
+    }
+   }
+  }
+ },
+ "/api/business-link/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "count": {
+     "type": "integer"
+    },
+    "next": {
+     "nullable": true
+    },
+    "previous": {
+     "nullable": true
+    },
+    "results": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "integer"
+       },
+       "link_type": {
+        "type": "string"
+       },
+       "label": {
+        "type": "string"
+       },
+       "url": {
+        "type": "string"
+       },
+       "created_dt": {
+        "type": "string"
+       },
+       "status": {
+        "type": "string"
+       },
+       "subtitle": {
+        "nullable": true
+       },
+       "img_url": {
+        "nullable": true
+       },
+       "allow_inapp_browser": {
+        "type": "boolean"
+       },
+       "business": {
+        "type": "integer"
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/business/": {
+  "status": 400,
+  "params": [],
+  "note": "No identifier"
+ },
+ "/api/cuisine/all-cuisines/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "results": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "value": {
+        "type": "string"
+       }
+      }
+     }
+    },
+    "code": {
+     "type": "integer"
+    }
+   }
+  }
+ },
+ "/api/filter-configs/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "list_menu": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "name": {
+        "type": "string"
+       },
+       "icon": {
+        "type": "string"
+       },
+       "displayName": {
+        "type": "string"
+       },
+       "modelName": {
+        "type": "string"
+       },
+       "showCount": {
+        "type": "boolean"
+       },
+       "hideZero": {
+        "type": "boolean"
+       },
+       "multipleSelect": {
+        "type": "boolean"
+       }
+      }
+     }
+    },
+    "list_pills": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "name": {
+        "type": "string"
+       },
+       "icon": {
+        "type": "string"
+       },
+       "displayName": {
+        "type": "string"
+       },
+       "modelName": {
+        "type": "string"
+       },
+       "multipleSelect": {
+        "type": "boolean"
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/published-list-cities/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   }
+  }
+ },
+ "/api/search-app/": {
+  "status": 200,
+  "params": [
+   "user"
+  ],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "predictions": {
+     "type": "array",
+     "items": {}
+    }
+   }
+  }
+ },
+ "/api/top-cities/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   }
+  }
+ },
+ "/api/trending/{uuid}/": {
+  "status": 200,
+  "params": [
+   "category"
+  ],
+  "schema": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "properties": {
+     "id": {
+      "type": "integer"
+     },
+     "place_id": {
+      "type": "string"
+     },
+     "name": {
+      "type": "string"
+     },
+     "status": {
+      "type": "string"
+     },
+     "city": {
+      "type": "string"
+     },
+     "borough": {
+      "nullable": true
+     },
+     "lat": {
+      "type": "number"
+     },
+     "lng": {
+      "type": "number"
+     },
+     "price": {
+      "type": "integer"
+     },
+     "neighborhood": {
+      "type": "string"
+     },
+     "country": {
+      "type": "string"
+     },
+     "website": {
+      "type": "string"
+     },
+     "phone_number": {
+      "type": "string"
+     },
+     "cuisines": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "has_res_links": {
+      "type": "boolean"
+     },
+     "has_delivery_links": {
+      "type": "boolean"
+     },
+     "default_category": {
+      "nullable": true
+     },
+     "quick_link": {
+      "type": "string"
+     },
+     "tz": {
+      "type": "string"
+     },
+     "businesshours_set": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "id": {
+         "type": "integer"
+        },
+        "open_day": {
+         "type": "integer"
+        },
+        "close_day": {
+         "type": "integer"
+        },
+        "open_time": {
+         "type": "string"
+        },
+        "close_time": {
+         "type": "string"
+        },
+        "created_dt": {
+         "type": "string"
+        },
+        "business": {
+         "type": "integer"
+        }
+       }
+      }
+     },
+     "has_no_show_fee": {
+      "type": "boolean"
+     },
+     "reservation_venue_id": {
+      "nullable": true
+     },
+     "price_key": {
+      "type": "string"
+     },
+     "businessdistinction_set": {
+      "type": "array",
+      "items": {}
+     },
+     "has_cover_photo": {
+      "type": "boolean"
+     },
+     "external_place_key": {
+      "type": "string"
+     }
+    }
+   }
+  }
+ },
+ "/api/business-labels/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "results": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "integer"
+       },
+       "name": {
+        "type": "string"
+       },
+       "display": {
+        "type": "string"
+       },
+       "category": {
+        "type": "string"
+       },
+       "keywords": {
+        "type": "array",
+        "items": {}
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/databusinessfloat-sparse/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "count": {
+     "type": "integer"
+    },
+    "results": {
+     "type": "array",
+     "items": {}
+    }
+   }
+  }
+ },
+ "/api/datauserbusinesstext-sparse/": {
+  "status": 200,
+  "params": [
+   "user"
+  ],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "count": {
+     "type": "integer"
+    },
+    "next": {
+     "nullable": true
+    },
+    "previous": {
+     "nullable": true
+    },
+    "results": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "integer"
+       },
+       "start_dt": {
+        "type": "string"
+       },
+       "end_dt": {
+        "nullable": true
+       },
+       "value": {
+        "type": "string"
+       },
+       "field": {
+        "type": "integer"
+       },
+       "user": {
+        "type": "string"
+       },
+       "business": {
+        "type": "integer"
+       },
+       "visit": {
+        "nullable": true
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/dish-rec/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "results": {
+     "type": "array",
+     "items": {}
+    }
+   }
+  }
+ },
+ "/api/rec-score/": {
+  "status": 400,
+  "params": [
+   "user",
+   "category"
+  ],
+  "note": "{\"error\":\"Invalid Request\"}"
+ },
+ "/api/static-maps-url/": {
+  "status": 500,
+  "params": []
+ },
+ "/api/suggest-business-cuisine/": {
+  "status": 200,
+  "params": [
+   "user"
+  ],
+  "schema": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "properties": {
+     "user_id": {
+      "type": "string"
+     },
+     "business_id": {
+      "type": "integer"
+     },
+     "value": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/suggest-business-price/": {
+  "status": 200,
+  "params": [
+   "user"
+  ],
+  "schema": {
+   "type": "array",
+   "items": {}
+  }
+ },
+ "/api/user-business-labels/": {
+  "status": 200,
+  "params": [
+   "user"
+  ],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "count": {
+     "type": "integer"
+    },
+    "next": {
+     "nullable": true
+    },
+    "previous": {
+     "nullable": true
+    },
+    "results": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "user": {
+        "type": "string"
+       },
+       "business": {
+        "type": "integer"
+       },
+       "field": {
+        "type": "integer"
+       },
+       "field_name": {
+        "type": "string"
+       },
+       "value": {
+        "type": "boolean"
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/user-business-photo/": {
+  "status": 400,
+  "params": [
+   "user"
+  ],
+  "note": "Missing identifier"
+ },
+ "/api/user-business-photos/": {
+  "status": 200,
+  "params": [
+   "user"
+  ],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "results": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "integer"
+       },
+       "image": {
+        "type": "string"
+       },
+       "thumbnail": {
+        "type": "string"
+       },
+       "bb_image": {
+        "type": "string"
+       },
+       "bb_thumbnail": {
+        "type": "string"
+       },
+       "description": {
+        "type": "string"
+       },
+       "order": {
+        "type": "integer"
+       },
+       "favorite_dish": {
+        "type": "boolean"
+       },
+       "created_dt": {
+        "type": "string"
+       },
+       "status": {
+        "type": "string"
+       },
+       "likes": {
+        "type": "array",
+        "items": {}
+       },
+       "user": {
+        "type": "string"
+       },
+       "business": {
+        "type": "integer"
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/follow-count/{uuid}/followers/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "integer"
+  }
+ },
+ "/api/follow-count/{uuid}/following/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "integer"
+  }
+ },
+ "/api/follow-requests/{uuid}/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "count": {
+     "type": "integer"
+    },
+    "results": {
+     "type": "array",
+     "items": {}
+    }
+   }
+  }
+ },
+ "/api/follow/": {
+  "status": 400,
+  "params": [],
+  "note": "no arguments provided"
+ },
+ "/api/followers/{uuid}/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "results": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "string"
+       },
+       "first_name": {
+        "type": "string"
+       },
+       "last_name": {
+        "type": "string"
+       },
+       "full_name": {
+        "type": "string"
+       },
+       "created_dt": {
+        "type": "string"
+       },
+       "username": {
+        "type": "string"
+       },
+       "instagram_url": {
+        "nullable": true
+       },
+       "tiktok_url": {
+        "nullable": true
+       },
+       "photo": {
+        "nullable": true
+       },
+       "profile_photo": {
+        "nullable": true
+       },
+       "public": {
+        "type": "boolean"
+       },
+       "school": {
+        "nullable": true
+       },
+       "company": {
+        "nullable": true
+       },
+       "has_supper_club": {
+        "type": "boolean"
+       },
+       "has_vip": {
+        "type": "boolean"
+       },
+       "is_playlist_eligible": {
+        "type": "boolean"
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/following/{uuid}/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "results": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "string"
+       },
+       "first_name": {
+        "type": "string"
+       },
+       "last_name": {
+        "type": "string"
+       },
+       "full_name": {
+        "type": "string"
+       },
+       "created_dt": {
+        "type": "string"
+       },
+       "username": {
+        "type": "string"
+       },
+       "instagram_url": {
+        "nullable": true
+       },
+       "tiktok_url": {
+        "nullable": true
+       },
+       "photo": {
+        "nullable": true
+       },
+       "profile_photo": {
+        "nullable": true
+       },
+       "public": {
+        "type": "boolean"
+       },
+       "school": {
+        "nullable": true
+       },
+       "company": {
+        "nullable": true
+       },
+       "has_supper_club": {
+        "type": "boolean"
+       },
+       "has_vip": {
+        "type": "boolean"
+       },
+       "is_playlist_eligible": {
+        "type": "boolean"
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/get-user-tag-suggestions/": {
+  "status": 400,
+  "params": [
+   "user"
+  ],
+  "note": "No identifier"
+ },
+ "/api/leaderboard/{uuid}/RANK/all_members/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "results": {
+     "type": "object",
+     "properties": {
+      "all_members": {
+       "type": "object",
+       "properties": {
+        "RANK": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "user": {
+            "type": "string"
+           },
+           "count": {
+            "type": "integer"
+           }
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/people-you-may-know-full/{uuid}/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "results": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "string"
+       },
+       "first_name": {
+        "type": "string"
+       },
+       "last_name": {
+        "type": "string"
+       },
+       "full_name": {
+        "type": "string"
+       },
+       "created_dt": {
+        "type": "string"
+       },
+       "username": {
+        "type": "string"
+       },
+       "instagram_url": {
+        "nullable": true
+       },
+       "tiktok_url": {
+        "nullable": true
+       },
+       "photo": {
+        "nullable": true
+       },
+       "profile_photo": {
+        "nullable": true
+       },
+       "public": {
+        "type": "boolean"
+       },
+       "school": {
+        "nullable": true
+       },
+       "company": {
+        "nullable": true
+       },
+       "has_supper_club": {
+        "type": "boolean"
+       },
+       "has_vip": {
+        "type": "boolean"
+       },
+       "is_playlist_eligible": {
+        "type": "boolean"
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/tagged-users/": {
+  "status": 200,
+  "params": [
+   "user"
+  ],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "tags": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "tagged": {
+        "type": "string"
+       },
+       "notification__business": {
+        "type": "integer"
+       }
+      }
+     }
+    },
+    "users": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "string"
+       },
+       "first_name": {
+        "type": "string"
+       },
+       "last_name": {
+        "type": "string"
+       },
+       "full_name": {
+        "type": "string"
+       },
+       "created_dt": {
+        "type": "string"
+       },
+       "username": {
+        "type": "string"
+       },
+       "instagram_url": {
+        "nullable": true
+       },
+       "tiktok_url": {
+        "nullable": true
+       },
+       "photo": {
+        "nullable": true
+       },
+       "profile_photo": {
+        "nullable": true
+       },
+       "public": {
+        "type": "boolean"
+       },
+       "school": {
+        "nullable": true
+       },
+       "company": {
+        "nullable": true
+       },
+       "has_supper_club": {
+        "type": "boolean"
+       },
+       "has_vip": {
+        "type": "boolean"
+       },
+       "is_playlist_eligible": {
+        "type": "boolean"
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/get-ranking/": {
+  "status": 200,
+  "params": [
+   "user",
+   "category"
+  ],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "results": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "integer"
+       },
+       "user": {
+        "type": "string"
+       },
+       "business": {
+        "type": "object",
+        "properties": {
+         "id": {
+          "type": "integer"
+         },
+         "place_id": {
+          "type": "string"
+         },
+         "name": {
+          "type": "string"
+         },
+         "status": {
+          "type": "string"
+         },
+         "city": {
+          "type": "string"
+         },
+         "borough": {
+          "nullable": true
+         },
+         "lat": {
+          "type": "number"
+         },
+         "lng": {
+          "type": "number"
+         },
+         "price": {
+          "type": "integer"
+         },
+         "neighborhood": {
+          "type": "string"
+         },
+         "country": {
+          "type": "string"
+         },
+         "website": {
+          "type": "string"
+         },
+         "phone_number": {
+          "type": "string"
+         },
+         "cuisines": {
+          "type": "array",
+          "items": {
+           "type": "string"
+          }
+         },
+         "has_res_links": {
+          "type": "boolean"
+         },
+         "has_delivery_links": {
+          "type": "boolean"
+         },
+         "default_category": {
+          "nullable": true
+         },
+         "quick_link": {
+          "type": "string"
+         },
+         "tz": {
+          "type": "string"
+         },
+         "businesshours_set": {
+          "type": "array",
+          "items": {
+           "type": "object"
+          }
+         },
+         "has_no_show_fee": {
+          "type": "boolean"
+         },
+         "reservation_venue_id": {
+          "nullable": true
+         },
+         "price_key": {
+          "type": "string"
+         },
+         "businessdistinction_set": {
+          "type": "array",
+          "items": {}
+         },
+         "has_cover_photo": {
+          "type": "boolean"
+         },
+         "external_place_key": {
+          "type": "string"
+         }
+        }
+       },
+       "value": {
+        "type": "number"
+       },
+       "category": {
+        "type": "string"
+       },
+       "created_dt": {
+        "type": "string"
+       },
+       "visit_dates": {
+        "type": "array",
+        "items": {}
+       },
+       "latest_visit_date": {
+        "type": "string"
+       },
+       "score": {
+        "type": "number"
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/score-average/{uuid}/ALL/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "COUNTRY": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "count": {
+        "type": "integer"
+       },
+       "score": {
+        "type": "number"
+       },
+       "value": {
+        "type": "string"
+       }
+      }
+     }
+    },
+    "CITY": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "count": {
+        "type": "integer"
+       },
+       "score": {
+        "type": "number"
+       },
+       "value": {
+        "type": "string"
+       }
+      }
+     }
+    },
+    "CUISINE": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "value": {
+        "type": "string"
+       },
+       "count": {
+        "type": "integer"
+       },
+       "score": {
+        "type": "number"
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/user-field-count/{uuid}/RANK/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "integer"
+  }
+ },
+ "/api/user-scores-cached/{uuid}/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "properties": {
+     "user_id": {
+      "type": "string"
+     },
+     "business_id": {
+      "type": "integer"
+     },
+     "value": {
+      "type": "number"
+     },
+     "category": {
+      "type": "string"
+     },
+     "labels": {
+      "type": "array",
+      "items": {}
+     }
+    }
+   }
+  }
+ },
+ "/api/user-scores/{uuid}/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "properties": {
+     "user_id": {
+      "type": "string"
+     },
+     "business_id": {
+      "type": "integer"
+     },
+     "value": {
+      "type": "number"
+     },
+     "category": {
+      "type": "string"
+     },
+     "labels": {
+      "type": "array",
+      "items": {}
+     }
+    }
+   }
+  }
+ },
+ "/api/agg-following-new/{uuid}/": {
+  "status": 200,
+  "params": [
+   "category"
+  ],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "results": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "business": {
+        "type": "integer"
+       },
+       "count": {
+        "type": "integer"
+       },
+       "score": {
+        "type": "number"
+       },
+       "users": {
+        "type": "array",
+        "items": {
+         "type": "string"
+        }
+       }
+      }
+     }
+    },
+    "businesses": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "integer"
+       },
+       "lat": {
+        "type": "number"
+       },
+       "lng": {
+        "type": "number"
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/feed-alert/{uuid}/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "results": {
+     "type": "array",
+     "items": {}
+    }
+   }
+  }
+ },
+ "/api/feed-item-data/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {}
+  }
+ },
+ "/api/newsfeed-data/{uuid}/": {
+  "status": 200,
+  "params": [
+   "supports_guide_feed_items",
+   "supports_featured_list_challenges",
+   "supports_featured_list_challenges_new",
+   "supports_rec_ask",
+   "supports_rec_ask_1"
+  ],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "results": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "integer"
+       },
+       "event_type": {
+        "type": "string"
+       },
+       "icon": {
+        "nullable": true
+       },
+       "sent_dt": {
+        "type": "string"
+       },
+       "internal_url": {
+        "nullable": true
+       },
+       "external_url": {
+        "nullable": true
+       },
+       "user1": {
+        "type": "string"
+       },
+       "title": {
+        "type": "string"
+       },
+       "body": {
+        "type": "string"
+       },
+       "business": {
+        "type": "integer"
+       },
+       "has_tags": {
+        "type": "boolean"
+       },
+       "category": {
+        "type": "string"
+       },
+       "button_label": {
+        "nullable": true
+       },
+       "guide": {
+        "nullable": true
+       },
+       "featured_list": {
+        "nullable": true
+       },
+       "rec_ask": {
+        "nullable": true
+       },
+       "labels": {
+        "type": "array",
+        "items": {}
+       },
+       "score": {
+        "type": "number"
+       },
+       "num_visits": {
+        "type": "integer"
+       },
+       "business_full": {
+        "type": "object",
+        "properties": {
+         "id": {
+          "type": "integer"
+         },
+         "place_id": {
+          "type": "string"
+         },
+         "name": {
+          "type": "string"
+         },
+         "status": {
+          "type": "string"
+         },
+         "city": {
+          "type": "string"
+         },
+         "borough": {
+          "nullable": true
+         },
+         "lat": {
+          "type": "number"
+         },
+         "lng": {
+          "type": "number"
+         },
+         "price": {
+          "type": "integer"
+         },
+         "neighborhood": {
+          "type": "string"
+         },
+         "country": {
+          "type": "string"
+         },
+         "website": {
+          "type": "string"
+         },
+         "phone_number": {
+          "type": "string"
+         },
+         "cuisines": {
+          "type": "array",
+          "items": {
+           "type": "string"
+          }
+         },
+         "has_res_links": {
+          "type": "boolean"
+         },
+         "has_delivery_links": {
+          "type": "boolean"
+         },
+         "default_category": {
+          "nullable": true
+         },
+         "quick_link": {
+          "type": "string"
+         },
+         "has_no_show_fee": {
+          "type": "boolean"
+         },
+         "reservation_venue_id": {
+          "nullable": true
+         },
+         "price_key": {
+          "type": "string"
+         },
+         "has_cover_photo": {
+          "type": "boolean"
+         },
+         "external_place_key": {
+          "type": "string"
+         }
+        }
+       },
+       "other": {
+        "type": "array",
+        "items": {
+         "type": "object",
+         "properties": {
+          "id": {
+           "type": "integer"
+          },
+          "event_type": {
+           "type": "string"
+          },
+          "icon": {
+           "nullable": true
+          },
+          "sent_dt": {
+           "type": "string"
+          },
+          "internal_url": {
+           "nullable": true
+          },
+          "external_url": {
+           "nullable": true
+          },
+          "user1": {
+           "type": "string"
+          },
+          "title": {
+           "nullable": true
+          },
+          "body": {
+           "type": "string"
+          },
+          "business": {
+           "type": "integer"
+          },
+          "has_tags": {
+           "type": "boolean"
+          },
+          "category": {
+           "type": "string"
+          },
+          "button_label": {
+           "nullable": true
+          },
+          "guide": {
+           "nullable": true
+          },
+          "featured_list": {
+           "nullable": true
+          },
+          "rec_ask": {
+           "nullable": true
+          },
+          "labels": {
+           "type": "array",
+           "items": {}
+          },
+          "score": {
+           "nullable": true
+          },
+          "num_visits": {
+           "nullable": true
+          },
+          "business_full": {
+           "type": "object"
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/newsfeed-reaction/{uuid}/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "results": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "integer"
+       },
+       "user": {
+        "type": "string"
+       },
+       "notification": {
+        "type": "integer"
+       },
+       "reaction_type": {
+        "type": "string"
+       }
+      }
+     }
+    },
+    "count": {
+     "type": "integer"
+    }
+   }
+  }
+ },
+ "/api/newsfeed-user/{uuid}/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "results": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "string"
+       },
+       "first_name": {
+        "type": "string"
+       },
+       "last_name": {
+        "type": "string"
+       },
+       "full_name": {
+        "type": "string"
+       },
+       "created_dt": {
+        "type": "string"
+       },
+       "username": {
+        "type": "string"
+       },
+       "instagram_url": {
+        "nullable": true
+       },
+       "tiktok_url": {
+        "nullable": true
+       },
+       "photo": {
+        "nullable": true
+       },
+       "profile_photo": {
+        "type": "string"
+       },
+       "public": {
+        "type": "boolean"
+       },
+       "school": {
+        "nullable": true
+       },
+       "company": {
+        "nullable": true
+       },
+       "has_supper_club": {
+        "type": "boolean"
+       },
+       "has_vip": {
+        "type": "boolean"
+       },
+       "is_playlist_eligible": {
+        "type": "boolean"
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/profile-newsfeed-data/{uuid}/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "results": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "integer"
+       },
+       "event_type": {
+        "type": "string"
+       },
+       "icon": {
+        "nullable": true
+       },
+       "sent_dt": {
+        "type": "string"
+       },
+       "internal_url": {
+        "type": "string"
+       },
+       "external_url": {
+        "nullable": true
+       },
+       "user1": {
+        "type": "string"
+       },
+       "title": {
+        "type": "string"
+       },
+       "body": {
+        "type": "string"
+       },
+       "business": {
+        "nullable": true
+       },
+       "has_tags": {
+        "type": "boolean"
+       },
+       "category": {
+        "nullable": true
+       },
+       "button_label": {
+        "nullable": true
+       },
+       "guide": {
+        "nullable": true
+       },
+       "featured_list": {
+        "nullable": true
+       },
+       "rec_ask": {
+        "nullable": true
+       },
+       "labels": {
+        "type": "array",
+        "items": {}
+       },
+       "score": {
+        "nullable": true
+       },
+       "num_visits": {
+        "nullable": true
+       },
+       "business_full": {
+        "nullable": true
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/your-newsfeed-data/{uuid}/": {
+  "status": 200,
+  "params": [
+   "supports_guide_feed_items",
+   "supports_featured_list_challenges",
+   "supports_featured_list_challenges_new",
+   "supports_rec_ask",
+   "supports_rec_ask_1"
+  ],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "results": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "integer"
+       },
+       "event_type": {
+        "type": "string"
+       },
+       "icon": {
+        "nullable": true
+       },
+       "sent_dt": {
+        "type": "string"
+       },
+       "internal_url": {
+        "type": "string"
+       },
+       "external_url": {
+        "nullable": true
+       },
+       "user1": {
+        "type": "string"
+       },
+       "title": {
+        "type": "string"
+       },
+       "body": {
+        "type": "string"
+       },
+       "business": {
+        "nullable": true
+       },
+       "has_tags": {
+        "type": "boolean"
+       },
+       "category": {
+        "nullable": true
+       },
+       "button_label": {
+        "nullable": true
+       },
+       "guide": {
+        "nullable": true
+       },
+       "featured_list": {
+        "nullable": true
+       },
+       "rec_ask": {
+        "nullable": true
+       },
+       "labels": {
+        "type": "array",
+        "items": {}
+       },
+       "score": {
+        "nullable": true
+       },
+       "num_visits": {
+        "nullable": true
+       },
+       "audience": {
+        "type": "string"
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/your-newsfeed-reaction/{uuid}/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "results": {
+     "type": "array",
+     "items": {}
+    }
+   }
+  }
+ },
+ "/api/challenge-join-config/": {
+  "status": 200,
+  "params": [
+   "user"
+  ],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "config": {
+     "type": "object",
+     "properties": {
+      "2026": {
+       "type": "object",
+       "properties": {
+        "page_background": {
+         "type": "string"
+        },
+        "header": {
+         "type": "string"
+        },
+        "style_content_padding_top": {
+         "type": "string"
+        },
+        "title": {
+         "type": "string"
+        },
+        "subtitle": {
+         "type": "string"
+        },
+        "placeholder": {
+         "type": "string"
+        },
+        "button": {
+         "type": "string"
+        },
+        "suggestions": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "label": {
+            "type": "integer"
+           },
+           "value": {
+            "type": "integer"
+           }
+          }
+         }
+        },
+        "auto_submit_suggestion": {
+         "type": "boolean"
+        },
+        "disable_button": {
+         "type": "boolean"
+        },
+        "are_you_sure_title": {
+         "type": "string"
+        },
+        "are_you_sure_body": {
+         "type": "string"
+        },
+        "are_you_sure_secondary_button": {
+         "type": "string"
+        },
+        "are_you_sure_primary_button": {
+         "type": "string"
+        }
+       }
+      }
+     }
+    },
+    "profile_card_config": {
+     "type": "object",
+     "properties": {
+      "2026": {
+       "type": "object",
+       "properties": {
+        "title": {
+         "type": "string"
+        },
+        "subtitle": {
+         "type": "string"
+        },
+        "icon": {
+         "type": "string"
+        },
+        "suggestions": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "label": {
+            "type": "integer"
+           },
+           "value": {
+            "type": "integer"
+           }
+          }
+         }
+        }
+       }
+      }
+     }
+    },
+    "userPledges": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "year": {
+        "type": "integer"
+       },
+       "pledge": {
+        "type": "integer"
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/my-featured-list-challenges/{uuid}/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "count": {
+     "type": "integer"
+    },
+    "results": {
+     "type": "array",
+     "items": {}
+    }
+   }
+  }
+ },
+ "/api/playlists/": {
+  "status": 400,
+  "params": [],
+  "note": "Missing parameters"
+ },
+ "/api/published-list-item-new/": {
+  "status": 400,
+  "params": [],
+  "note": "No identifier"
+ },
+ "/api/published-list/": {
+  "status": 200,
+  "params": [
+   "supports_featured_list_challenges"
+  ],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "count": {
+     "type": "integer"
+    },
+    "next": {
+     "nullable": true
+    },
+    "previous": {
+     "nullable": true
+    },
+    "results": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "integer"
+       },
+       "title": {
+        "type": "string"
+       },
+       "description": {
+        "type": "string"
+       },
+       "cover_photo": {
+        "nullable": true
+       },
+       "ranked": {
+        "type": "boolean"
+       },
+       "long_title": {
+        "type": "boolean"
+       },
+       "category": {
+        "type": "string"
+       },
+       "keywords": {
+        "type": "array",
+        "items": {}
+       },
+       "user_setting": {
+        "nullable": true
+       },
+       "quick_link": {
+        "type": "string"
+       },
+       "custom_button_label": {
+        "nullable": true
+       },
+       "custom_button_url": {
+        "nullable": true
+       },
+       "reservations": {
+        "type": "boolean"
+       },
+       "delivery": {
+        "type": "boolean"
+       },
+       "status": {
+        "type": "string"
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/published-list/{uuid}/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "count": {
+     "type": "integer"
+    },
+    "results": {
+     "type": "array",
+     "items": {}
+    }
+   }
+  }
+ },
+ "/api/short-list/{uuid}/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "array",
+   "items": {}
+  }
+ },
+ "/api/user-guide-items/": {
+  "status": 200,
+  "params": [
+   "user_id",
+   "supports_no_guide_category",
+   "supports_no_guide_city",
+   "supports_collab_guides"
+  ],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "results": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "business": {
+        "type": "integer"
+       },
+       "guide": {
+        "type": "integer"
+       },
+       "added_by": {
+        "type": "object",
+        "properties": {
+         "user_id": {
+          "type": "string"
+         },
+         "username": {
+          "type": "string"
+         },
+         "full_name": {
+          "type": "string"
+         },
+         "first_name": {
+          "type": "string"
+         },
+         "last_name": {
+          "type": "string"
+         },
+         "profile_photo": {
+          "type": "string"
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/user-guide/": {
+  "status": 200,
+  "params": [
+   "user_id",
+   "supports_no_guide_category",
+   "supports_no_guide_city",
+   "supports_collab_guides",
+   "supports_ask_for_recs_guides",
+   "supports_ask_for_recs_guides_1",
+   "supports_ask_for_recs_guides_2"
+  ],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "results": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "integer"
+       },
+       "name": {
+        "type": "string"
+       },
+       "full_title": {
+        "type": "string"
+       },
+       "hscroll_title": {
+        "type": "string"
+       },
+       "subtitle": {
+        "type": "string"
+       },
+       "display_photo": {
+        "type": "object",
+        "properties": {
+         "id": {
+          "type": "integer"
+         },
+         "user": {
+          "type": "string"
+         },
+         "business": {
+          "type": "integer"
+         },
+         "order": {
+          "type": "integer"
+         },
+         "description": {
+          "type": "string"
+         },
+         "image": {
+          "type": "string"
+         },
+         "favorite_dish": {
+          "type": "boolean"
+         },
+         "created_dt": {
+          "type": "string"
+         },
+         "thumbnail": {
+          "type": "string"
+         },
+         "likes": {
+          "type": "array",
+          "items": {
+           "type": "string"
+          }
+         },
+         "bb_image": {
+          "type": "string"
+         },
+         "bb_thumbnail": {
+          "type": "string"
+         }
+        }
+       },
+       "list_field": {
+        "type": "string"
+       },
+       "category": {
+        "nullable": true
+       },
+       "categories": {
+        "type": "array",
+        "items": {
+         "type": "string"
+        }
+       },
+       "city": {
+        "type": "string"
+       },
+       "cities": {
+        "type": "array",
+        "items": {
+         "type": "string"
+        }
+       },
+       "audience": {
+        "type": "string"
+       },
+       "is_draft": {
+        "type": "boolean"
+       },
+       "draft": {
+        "type": "boolean"
+       },
+       "paid": {
+        "type": "boolean"
+       },
+       "is_user_guide": {
+        "type": "boolean"
+       },
+       "description": {
+        "type": "string"
+       },
+       "is_collaborative": {
+        "type": "boolean"
+       },
+       "collaborators": {
+        "type": "array",
+        "items": {
+         "type": "object",
+         "properties": {
+          "user_id": {
+           "type": "string"
+          },
+          "username": {
+           "type": "string"
+          },
+          "full_name": {
+           "type": "string"
+          },
+          "first_name": {
+           "type": "string"
+          },
+          "last_name": {
+           "type": "string"
+          },
+          "profile_photo": {
+           "nullable": true
+          },
+          "status": {
+           "type": "string"
+          },
+          "is_collaborator": {
+           "nullable": true
+          }
+         }
+        }
+       },
+       "is_owner": {
+        "type": "boolean"
+       },
+       "owner": {
+        "type": "object",
+        "properties": {
+         "user_id": {
+          "type": "string"
+         },
+         "username": {
+          "type": "string"
+         },
+         "full_name": {
+          "type": "string"
+         },
+         "first_name": {
+          "type": "string"
+         },
+         "last_name": {
+          "type": "string"
+         },
+         "profile_photo": {
+          "type": "string"
+         }
+        }
+       },
+       "source": {
+        "type": "string"
+       },
+       "rec_ask_id": {
+        "nullable": true
+       },
+       "filter_key": {
+        "type": "string"
+       },
+       "filter_value": {
+        "type": "string"
+       },
+       "total_count": {
+        "type": "integer"
+       },
+       "can_add_items": {
+        "type": "boolean"
+       },
+       "can_delete": {
+        "type": "boolean"
+       },
+       "can_reorder": {
+        "type": "boolean"
+       },
+       "can_add_collaborator": {
+        "type": "boolean"
+       },
+       "can_mark_paid": {
+        "type": "boolean"
+       },
+       "show_crown": {
+        "type": "boolean"
+       },
+       "hide_edit_notes_option": {
+        "type": "boolean"
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/app-notification/{uuid}/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "results": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "integer"
+       },
+       "event_type": {
+        "type": "string"
+       },
+       "icon": {
+        "nullable": true
+       },
+       "internal_url": {
+        "nullable": true
+       },
+       "external_url": {
+        "nullable": true
+       },
+       "user1": {
+        "type": "string"
+       },
+       "body": {
+        "type": "string"
+       },
+       "business": {
+        "nullable": true
+       },
+       "status": {
+        "type": "string"
+       },
+       "topic": {
+        "type": "integer"
+       },
+       "sent_dt": {
+        "type": "string"
+       },
+       "post_update_body": {
+        "nullable": true
+       },
+       "post_update_icon": {
+        "nullable": true
+       },
+       "post_update_internal_url": {
+        "nullable": true
+       },
+       "post_update_external_url": {
+        "nullable": true
+       },
+       "hidden": {
+        "type": "boolean"
+       },
+       "min_version": {
+        "nullable": true
+       },
+       "user_setting_name": {
+        "nullable": true
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/banner-notification/{uuid}/": {
+  "status": 200,
+  "params": [
+   "banner_v2",
+   "configurable_slides"
+  ],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "results": {
+     "type": "array",
+     "items": {}
+    }
+   }
+  }
+ },
+ "/api/muted/{uuid}/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "results": {
+     "type": "array",
+     "items": {}
+    }
+   }
+  }
+ },
+ "/api/notification-reaction/": {
+  "status": 200,
+  "params": [
+   "user"
+  ],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "count": {
+     "type": "integer"
+    },
+    "next": {
+     "nullable": true
+    },
+    "previous": {
+     "nullable": true
+    },
+    "results": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "integer"
+       },
+       "user": {
+        "type": "string"
+       },
+       "notification": {
+        "type": "integer"
+       },
+       "reaction_type": {
+        "type": "string"
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/popup/{uuid}/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "results": {
+     "type": "array",
+     "items": {}
+    }
+   }
+  }
+ },
+ "/api/available-reservations/{uuid}/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "results": {
+     "type": "array",
+     "items": {}
+    }
+   }
+  }
+ },
+ "/api/business-res-booked-list/": {
+  "status": 200,
+  "params": [
+   "user"
+  ],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "upcoming": {
+     "type": "array",
+     "items": {}
+    },
+    "past": {
+     "type": "array",
+     "items": {}
+    }
+   }
+  }
+ },
+ "/api/res-priority-data/": {
+  "status": 200,
+  "params": [
+   "user"
+  ],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "priority": {
+     "type": "integer"
+    },
+    "priorities": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "value": {
+        "type": "integer"
+       }
+      }
+     }
+    },
+    "title": {
+     "type": "string"
+    },
+    "subtitle": {
+     "type": "string"
+    },
+    "info_title": {
+     "type": "string"
+    },
+    "info_body": {
+     "type": "string"
+    },
+    "credits_required": {
+     "type": "integer"
+    },
+    "credits_available": {
+     "type": "integer"
+    }
+   }
+  }
+ },
+ "/api/reservation-posting/": {
+  "status": 200,
+  "params": [
+   "user"
+  ],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "count": {
+     "type": "integer"
+    },
+    "next": {
+     "nullable": true
+    },
+    "previous": {
+     "nullable": true
+    },
+    "results": {
+     "type": "array",
+     "items": {}
+    }
+   }
+  }
+ },
+ "/api/stripe-payment-methods/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "results": {
+     "type": "array",
+     "items": {}
+    }
+   }
+  }
+ },
+ "/api/device/": {
+  "status": 400,
+  "params": [],
+  "note": "No identifier"
+ },
+ "/api/api-hosts/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "apiHost": {
+     "type": "string"
+    },
+    "priorityHost": {
+     "type": "string"
+    },
+    "profileHost": {
+     "type": "string"
+    },
+    "photoHost": {
+     "type": "string"
+    },
+    "recsHost": {
+     "type": "string"
+    },
+    "activityHost": {
+     "type": "string"
+    },
+    "popupsHost": {
+     "type": "string"
+    },
+    "aiSearchHost": {
+     "type": "string"
+    },
+    "defaultRetriesGet": {
+     "type": "integer"
+    },
+    "defaultRetriesPost": {
+     "type": "integer"
+    },
+    "defaultRetriesPut": {
+     "type": "integer"
+    }
+   }
+  }
+ },
+ "/api/search-cities/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "predictions": {
+     "type": "array",
+     "items": {}
+    }
+   }
+  }
+ },
+ "/api/search-valid-cities/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "cities": {
+     "type": "array",
+     "items": {}
+    }
+   }
+  }
+ },
+ "/api/cities/search/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "results": {
+     "type": "array",
+     "items": {}
+    }
+   }
+  }
+ },
+ "/api/judy-welcome-page/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "first_name": {
+     "type": "string"
+    },
+    "profile_photo": {
+     "type": "string"
+    }
+   }
+  }
+ },
+ "/api/school/": {
+  "status": 400,
+  "params": [],
+  "note": "No school email"
+ },
+ "/api/all-schools/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "results": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "integer"
+       },
+       "name": {
+        "type": "string"
+       },
+       "short_name": {
+        "type": "string"
+       },
+       "members": {
+        "type": "integer"
+       },
+       "display_name": {
+        "type": "string"
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/all-companies/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "results": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "integer"
+       },
+       "name": {
+        "type": "string"
+       },
+       "short_name": {
+        "type": "string"
+       },
+       "members": {
+        "type": "integer"
+       },
+       "display_name": {
+        "type": "string"
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/company/": {
+  "status": 400,
+  "params": [],
+  "note": "No company email"
+ },
+ "/api/datauserbusinessboolean-sparse/": {
+  "status": 200,
+  "params": [
+   "user"
+  ],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "count": {
+     "type": "integer"
+    },
+    "next": {
+     "nullable": true
+    },
+    "previous": {
+     "nullable": true
+    },
+    "results": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "user": {
+        "type": "string"
+       },
+       "business": {
+        "type": "integer"
+       },
+       "field": {
+        "type": "integer"
+       },
+       "field_name": {
+        "type": "string"
+       },
+       "value": {
+        "type": "boolean"
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/sum-datauserinteger/": {
+  "status": 200,
+  "params": [
+   "user"
+  ],
+  "schema": {
+   "type": "integer"
+  }
+ },
+ "/api/custom-field/": {
+  "status": 200,
+  "params": [
+   "user",
+   "vguides"
+  ],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "count": {
+     "type": "integer"
+    },
+    "next": {
+     "nullable": true
+    },
+    "previous": {
+     "nullable": true
+    },
+    "results": {
+     "type": "array",
+     "items": {}
+    }
+   }
+  }
+ },
+ "/api/user-guide-city-options/": {
+  "status": 200,
+  "params": [
+   "user"
+  ],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "options": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "integer"
+       },
+       "name": {
+        "type": "string"
+       },
+       "display": {
+        "type": "string"
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/collab-guide-user-suggestions/": {
+  "status": 200,
+  "params": [
+   "user",
+   "page",
+   "page_size",
+   "guide_id"
+  ],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "results": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "user_id": {
+        "type": "string"
+       },
+       "username": {
+        "type": "string"
+       },
+       "full_name": {
+        "type": "string"
+       },
+       "first_name": {
+        "type": "string"
+       },
+       "last_name": {
+        "type": "string"
+       },
+       "profile_photo": {
+        "nullable": true
+       },
+       "status": {
+        "type": "string"
+       },
+       "is_collaborator": {
+        "type": "boolean"
+       }
+      }
+     }
+    },
+    "page": {
+     "type": "integer"
+    },
+    "page_size": {
+     "type": "integer"
+    },
+    "is_last_page": {
+     "type": "boolean"
+    },
+    "existing_collaborators": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "user_id": {
+        "type": "string"
+       },
+       "username": {
+        "type": "string"
+       },
+       "full_name": {
+        "type": "string"
+       },
+       "first_name": {
+        "type": "string"
+       },
+       "last_name": {
+        "type": "string"
+       },
+       "profile_photo": {
+        "nullable": true
+       },
+       "status": {
+        "type": "string"
+       },
+       "is_collaborator": {
+        "type": "boolean"
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/custom-field-value/": {
+  "status": 200,
+  "params": [
+   "user",
+   "vguides"
+  ],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "count": {
+     "type": "integer"
+    },
+    "next": {
+     "nullable": true
+    },
+    "previous": {
+     "nullable": true
+    },
+    "results": {
+     "type": "array",
+     "items": {}
+    }
+   }
+  }
+ },
+ "/api/user-field-photo/": {
+  "status": 400,
+  "params": [
+   "user"
+  ],
+  "note": "missing identifier"
+ },
+ "/api/business-contact-data/": {
+  "status": 404,
+  "params": []
+ },
+ "/api/business-address-data/": {
+  "status": 500,
+  "params": []
+ },
+ "/api/version/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "results": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "version": {
+        "type": "string"
+       },
+       "build": {
+        "nullable": true
+       },
+       "force": {
+        "type": "boolean"
+       },
+       "alert_text": {
+        "nullable": true
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/comments-page-quick-link/": {
+  "status": 500,
+  "params": []
+ },
+ "/api/business-page-quick-link/": {
+  "status": 500,
+  "params": []
+ },
+ "/api/collab-guide-invite-link/": {
+  "status": 200,
+  "params": [
+   "guide"
+  ],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "url": {
+     "type": "string"
+    }
+   }
+  }
+ },
+ "/api/business-res-availability/": {
+  "status": 500,
+  "params": []
+ },
+ "/api/delivery/places-autocomplete/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "predictions": {
+     "type": "array",
+     "items": {}
+    }
+   }
+  }
+ },
+ "/api/delivery/place-details/": {
+  "status": 400,
+  "params": [],
+  "note": "{\"error\":\"place_id_required\"}"
+ },
+ "/api/reservation-release-time/": {
+  "status": 400,
+  "params": [],
+  "note": "no identifier provided"
+ },
+ "/api/reservation-reminder/": {
+  "status": 200,
+  "params": [
+   "user"
+  ],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "results": {
+     "type": "array",
+     "items": {}
+    },
+    "count": {
+     "type": "integer"
+    }
+   }
+  }
+ },
+ "/api/business-hours/": {
+  "status": 400,
+  "params": [],
+  "note": "no identifier"
+ },
+ "/api/cuisine/disliked-cuisine/": {
+  "status": 200,
+  "params": [
+   "user"
+  ],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "count": {
+     "type": "integer"
+    },
+    "next": {
+     "nullable": true
+    },
+    "previous": {
+     "nullable": true
+    },
+    "results": {
+     "type": "array",
+     "items": {}
+    }
+   }
+  }
+ },
+ "/api/dietary-restriction-options/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   }
+  }
+ },
+ "/api/city-hierarchy/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "Miami, FL": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "Los Angeles, CA": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "Boston, MA": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "San Diego, CA": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "Nordland": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "Innlandet": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "Sydney": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "Dallas, TX": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "Houston, TX": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "Phnom Penh": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "Atlanta, GA": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "Dublin": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "Toronto, ON": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   }
+  }
+ },
+ "/api/disliked-cuisines/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   }
+  }
+ },
+ "/api/faq/": {
+  "status": 200,
+  "params": [
+   "user"
+  ],
+  "schema": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "properties": {
+     "key": {
+      "type": "string"
+     },
+     "keywords": {
+      "type": "array",
+      "items": {}
+     },
+     "question": {
+      "type": "string"
+     },
+     "answer": {
+      "type": "string"
+     },
+     "image": {
+      "nullable": true
+     },
+     "link": {
+      "nullable": true
+     },
+     "supper_club": {
+      "type": "boolean"
+     },
+     "vip": {
+      "type": "boolean"
+     }
+    }
+   }
+  }
+ },
+ "/api/datauservarchar/": {
+  "status": 200,
+  "params": [
+   "user"
+  ],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "count": {
+     "type": "integer"
+    },
+    "next": {
+     "nullable": true
+    },
+    "previous": {
+     "nullable": true
+    },
+    "results": {
+     "type": "array",
+     "items": {}
+    }
+   }
+  }
+ },
+ "/api/startup-city/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "results": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "main_city": {
+        "type": "string"
+       },
+       "city": {
+        "type": "string"
+       },
+       "id": {
+        "type": "integer"
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/user-hscroll-lists/": {
+  "status": 200,
+  "params": [
+   "user"
+  ],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "result": {
+     "type": "object",
+     "properties": {
+      "people_you_may_know": {
+       "type": "object",
+       "properties": {
+        "unitName": {
+         "type": "string"
+        },
+        "title": {
+         "type": "string"
+        },
+        "items": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "user": {
+            "type": "object"
+           },
+           "title": {
+            "type": "string"
+           },
+           "subtitle": {
+            "type": "string"
+           },
+           "suggested_subtitle": {
+            "type": "string"
+           }
+          }
+         }
+        },
+        "showHideButton": {
+         "type": "boolean"
+        }
+       }
+      },
+      "top_in_city": {
+       "type": "object",
+       "properties": {
+        "unitName": {
+         "type": "string"
+        },
+        "title": {
+         "type": "string"
+        },
+        "items": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "user": {
+            "type": "object"
+           },
+           "title": {
+            "type": "string"
+           },
+           "subtitle": {
+            "type": "string"
+           },
+           "city_subtitle": {
+            "type": "string"
+           }
+          }
+         }
+        },
+        "showHideButton": {
+         "type": "boolean"
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/you-and-friend-feed/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "results": {
+     "type": "array",
+     "items": {}
+    }
+   }
+  }
+ },
+ "/api/business-links/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "count": {
+     "type": "integer"
+    },
+    "next": {
+     "nullable": true
+    },
+    "previous": {
+     "nullable": true
+    },
+    "results": {
+     "type": "array",
+     "items": {}
+    }
+   }
+  }
+ },
+ "/api/databusinessinteger-sparse/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "count": {
+     "type": "integer"
+    },
+    "next": {
+     "type": "string"
+    },
+    "previous": {
+     "nullable": true
+    },
+    "results": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "integer"
+       },
+       "business": {
+        "type": "integer"
+       },
+       "field": {
+        "type": "integer"
+       },
+       "value": {
+        "type": "integer"
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/datauserbusinessfloat/": {
+  "status": 200,
+  "params": [
+   "user",
+   "category"
+  ],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "count": {
+     "type": "integer"
+    },
+    "next": {
+     "nullable": true
+    },
+    "previous": {
+     "nullable": true
+    },
+    "results": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "integer"
+       },
+       "user": {
+        "type": "string"
+       },
+       "business": {
+        "type": "integer"
+       },
+       "field": {
+        "type": "integer"
+       },
+       "value": {
+        "type": "number"
+       },
+       "category": {
+        "type": "string"
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/all-filter-options/": {
+  "status": 200,
+  "params": [
+   "user",
+   "category"
+  ],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "CITY": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "NEIGHBORHOOD": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "BOROUGH": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "COUNTRY": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "CUISINE": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   }
+  }
+ },
+ "/api/nominations/": {
+  "status": 400,
+  "params": [],
+  "note": "No identifier"
+ },
+ "/api/search-business-dishes/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "results": {
+     "type": "array",
+     "items": {}
+    }
+   }
+  }
+ },
+ "/api/device-setting/": {
+  "status": 400,
+  "params": [],
+  "note": "No identifier"
+ },
+ "/api/business-street-address/": {
+  "status": 400,
+  "params": [],
+  "note": "missing identifier"
+ },
+ "/api/business-hscroll-photos/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "results": {
+     "type": "object",
+     "properties": {}
+    }
+   }
+  }
+ },
+ "/api/res-sharing-intro-slides/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "config": {
+     "type": "object",
+     "properties": {
+      "slides": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "key": {
+          "type": "string"
+         },
+         "title": {
+          "type": "string"
+         },
+         "body": {
+          "type": "string"
+         },
+         "custom_icon": {
+          "type": "string"
+         },
+         "button_text": {
+          "type": "string"
+         },
+         "button_action": {
+          "type": "string"
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/user-guide-list-view/": {
+  "status": 200,
+  "params": [
+   "list_id",
+   "viewer",
+   "playlists_v2",
+   "vguides",
+   "supports_no_guide_category",
+   "supports_no_guide_city",
+   "supports_collab_guides"
+  ],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "user": {
+     "type": "object",
+     "properties": {
+      "id": {
+       "type": "string"
+      },
+      "first_name": {
+       "type": "string"
+      },
+      "last_name": {
+       "type": "string"
+      },
+      "full_name": {
+       "type": "string"
+      },
+      "created_dt": {
+       "type": "string"
+      },
+      "username": {
+       "type": "string"
+      },
+      "instagram_url": {
+       "nullable": true
+      },
+      "tiktok_url": {
+       "nullable": true
+      },
+      "photo": {
+       "nullable": true
+      },
+      "profile_photo": {
+       "type": "string"
+      },
+      "public": {
+       "type": "boolean"
+      },
+      "school": {
+       "nullable": true
+      },
+      "company": {
+       "nullable": true
+      },
+      "has_supper_club": {
+       "type": "boolean"
+      },
+      "has_vip": {
+       "type": "boolean"
+      },
+      "is_playlist_eligible": {
+       "type": "boolean"
+      }
+     }
+    },
+    "results": {
+     "type": "array",
+     "items": {}
+    },
+    "playlist": {
+     "type": "object",
+     "properties": {
+      "id": {
+       "type": "integer"
+      },
+      "name": {
+       "type": "string"
+      },
+      "full_title": {
+       "type": "string"
+      },
+      "hscroll_title": {
+       "type": "string"
+      },
+      "subtitle": {
+       "type": "string"
+      },
+      "display_photo": {
+       "type": "object",
+       "properties": {
+        "id": {
+         "type": "integer"
+        },
+        "user": {
+         "type": "string"
+        },
+        "business": {
+         "type": "integer"
+        },
+        "order": {
+         "type": "integer"
+        },
+        "description": {
+         "type": "string"
+        },
+        "image": {
+         "type": "string"
+        },
+        "favorite_dish": {
+         "type": "boolean"
+        },
+        "created_dt": {
+         "type": "string"
+        },
+        "thumbnail": {
+         "type": "string"
+        },
+        "likes": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "bb_image": {
+         "type": "string"
+        },
+        "bb_thumbnail": {
+         "type": "string"
+        },
+        "username": {
+         "type": "string"
+        }
+       }
+      },
+      "list_field": {
+       "type": "string"
+      },
+      "category": {
+       "nullable": true
+      },
+      "categories": {
+       "type": "array",
+       "items": {
+        "type": "string"
+       }
+      },
+      "city": {
+       "type": "string"
+      },
+      "cities": {
+       "type": "array",
+       "items": {
+        "type": "string"
+       }
+      },
+      "audience": {
+       "type": "string"
+      },
+      "is_draft": {
+       "type": "boolean"
+      },
+      "draft": {
+       "type": "boolean"
+      },
+      "paid": {
+       "type": "boolean"
+      },
+      "is_user_guide": {
+       "type": "boolean"
+      },
+      "description": {
+       "type": "string"
+      },
+      "is_collaborative": {
+       "type": "boolean"
+      },
+      "collaborators": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "user_id": {
+          "type": "string"
+         },
+         "username": {
+          "type": "string"
+         },
+         "full_name": {
+          "type": "string"
+         },
+         "first_name": {
+          "type": "string"
+         },
+         "last_name": {
+          "type": "string"
+         },
+         "profile_photo": {
+          "nullable": true
+         },
+         "status": {
+          "type": "string"
+         },
+         "is_collaborator": {
+          "nullable": true
+         }
+        }
+       }
+      },
+      "is_owner": {
+       "type": "boolean"
+      },
+      "owner": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "type": "string"
+        },
+        "username": {
+         "type": "string"
+        },
+        "full_name": {
+         "type": "string"
+        },
+        "first_name": {
+         "type": "string"
+        },
+        "last_name": {
+         "type": "string"
+        },
+        "profile_photo": {
+         "type": "string"
+        }
+       }
+      },
+      "source": {
+       "type": "string"
+      },
+      "rec_ask_id": {
+       "nullable": true
+      },
+      "filter_key": {
+       "type": "string"
+      },
+      "filter_value": {
+       "type": "string"
+      },
+      "total_count": {
+       "type": "integer"
+      },
+      "can_add_items": {
+       "type": "boolean"
+      },
+      "can_delete": {
+       "type": "boolean"
+      },
+      "can_reorder": {
+       "type": "boolean"
+      },
+      "can_add_collaborator": {
+       "type": "boolean"
+      },
+      "can_mark_paid": {
+       "type": "boolean"
+      },
+      "show_crown": {
+       "type": "boolean"
+      },
+      "hide_edit_notes_option": {
+       "type": "boolean"
+      }
+     }
+    },
+    "city": {
+     "type": "string"
+    },
+    "list_field": {
+     "type": "string"
+    },
+    "show_categories_on_items": {
+     "type": "boolean"
+    },
+    "added_by": {
+     "type": "object",
+     "properties": {
+      "1668290": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "type": "string"
+        },
+        "username": {
+         "type": "string"
+        },
+        "full_name": {
+         "type": "string"
+        },
+        "first_name": {
+         "type": "string"
+        },
+        "last_name": {
+         "type": "string"
+        },
+        "profile_photo": {
+         "type": "string"
+        }
+       }
+      },
+      "671134": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "type": "string"
+        },
+        "username": {
+         "type": "string"
+        },
+        "full_name": {
+         "type": "string"
+        },
+        "first_name": {
+         "type": "string"
+        },
+        "last_name": {
+         "type": "string"
+        },
+        "profile_photo": {
+         "type": "string"
+        }
+       }
+      },
+      "1339138": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "type": "string"
+        },
+        "username": {
+         "type": "string"
+        },
+        "full_name": {
+         "type": "string"
+        },
+        "first_name": {
+         "type": "string"
+        },
+        "last_name": {
+         "type": "string"
+        },
+        "profile_photo": {
+         "type": "string"
+        }
+       }
+      },
+      "740475": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "type": "string"
+        },
+        "username": {
+         "type": "string"
+        },
+        "full_name": {
+         "type": "string"
+        },
+        "first_name": {
+         "type": "string"
+        },
+        "last_name": {
+         "type": "string"
+        },
+        "profile_photo": {
+         "type": "string"
+        }
+       }
+      },
+      "343991": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "type": "string"
+        },
+        "username": {
+         "type": "string"
+        },
+        "full_name": {
+         "type": "string"
+        },
+        "first_name": {
+         "type": "string"
+        },
+        "last_name": {
+         "type": "string"
+        },
+        "profile_photo": {
+         "type": "string"
+        }
+       }
+      },
+      "669249": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "type": "string"
+        },
+        "username": {
+         "type": "string"
+        },
+        "full_name": {
+         "type": "string"
+        },
+        "first_name": {
+         "type": "string"
+        },
+        "last_name": {
+         "type": "string"
+        },
+        "profile_photo": {
+         "type": "string"
+        }
+       }
+      },
+      "205281": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "type": "string"
+        },
+        "username": {
+         "type": "string"
+        },
+        "full_name": {
+         "type": "string"
+        },
+        "first_name": {
+         "type": "string"
+        },
+        "last_name": {
+         "type": "string"
+        },
+        "profile_photo": {
+         "type": "string"
+        }
+       }
+      },
+      "342879": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "type": "string"
+        },
+        "username": {
+         "type": "string"
+        },
+        "full_name": {
+         "type": "string"
+        },
+        "first_name": {
+         "type": "string"
+        },
+        "last_name": {
+         "type": "string"
+        },
+        "profile_photo": {
+         "type": "string"
+        }
+       }
+      },
+      "189244": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "type": "string"
+        },
+        "username": {
+         "type": "string"
+        },
+        "full_name": {
+         "type": "string"
+        },
+        "first_name": {
+         "type": "string"
+        },
+        "last_name": {
+         "type": "string"
+        },
+        "profile_photo": {
+         "type": "string"
+        }
+       }
+      },
+      "578457": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "type": "string"
+        },
+        "username": {
+         "type": "string"
+        },
+        "full_name": {
+         "type": "string"
+        },
+        "first_name": {
+         "type": "string"
+        },
+        "last_name": {
+         "type": "string"
+        },
+        "profile_photo": {
+         "type": "string"
+        }
+       }
+      },
+      "718512": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "type": "string"
+        },
+        "username": {
+         "type": "string"
+        },
+        "full_name": {
+         "type": "string"
+        },
+        "first_name": {
+         "type": "string"
+        },
+        "last_name": {
+         "type": "string"
+        },
+        "profile_photo": {
+         "type": "string"
+        }
+       }
+      },
+      "205268": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "type": "string"
+        },
+        "username": {
+         "type": "string"
+        },
+        "full_name": {
+         "type": "string"
+        },
+        "first_name": {
+         "type": "string"
+        },
+        "last_name": {
+         "type": "string"
+        },
+        "profile_photo": {
+         "type": "string"
+        }
+       }
+      },
+      "697355": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "type": "string"
+        },
+        "username": {
+         "type": "string"
+        },
+        "full_name": {
+         "type": "string"
+        },
+        "first_name": {
+         "type": "string"
+        },
+        "last_name": {
+         "type": "string"
+        },
+        "profile_photo": {
+         "type": "string"
+        }
+       }
+      },
+      "381062": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "type": "string"
+        },
+        "username": {
+         "type": "string"
+        },
+        "full_name": {
+         "type": "string"
+        },
+        "first_name": {
+         "type": "string"
+        },
+        "last_name": {
+         "type": "string"
+        },
+        "profile_photo": {
+         "type": "string"
+        }
+       }
+      },
+      "1223867": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "type": "string"
+        },
+        "username": {
+         "type": "string"
+        },
+        "full_name": {
+         "type": "string"
+        },
+        "first_name": {
+         "type": "string"
+        },
+        "last_name": {
+         "type": "string"
+        },
+        "profile_photo": {
+         "type": "string"
+        }
+       }
+      },
+      "2666906": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "type": "string"
+        },
+        "username": {
+         "type": "string"
+        },
+        "full_name": {
+         "type": "string"
+        },
+        "first_name": {
+         "type": "string"
+        },
+        "last_name": {
+         "type": "string"
+        },
+        "profile_photo": {
+         "type": "string"
+        }
+       }
+      },
+      "1115150": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "type": "string"
+        },
+        "username": {
+         "type": "string"
+        },
+        "full_name": {
+         "type": "string"
+        },
+        "first_name": {
+         "type": "string"
+        },
+        "last_name": {
+         "type": "string"
+        },
+        "profile_photo": {
+         "type": "string"
+        }
+       }
+      },
+      "968980": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "type": "string"
+        },
+        "username": {
+         "type": "string"
+        },
+        "full_name": {
+         "type": "string"
+        },
+        "first_name": {
+         "type": "string"
+        },
+        "last_name": {
+         "type": "string"
+        },
+        "profile_photo": {
+         "type": "string"
+        }
+       }
+      },
+      "2904687": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "type": "string"
+        },
+        "username": {
+         "type": "string"
+        },
+        "full_name": {
+         "type": "string"
+        },
+        "first_name": {
+         "type": "string"
+        },
+        "last_name": {
+         "type": "string"
+        },
+        "profile_photo": {
+         "type": "string"
+        }
+       }
+      },
+      "696344": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "type": "string"
+        },
+        "username": {
+         "type": "string"
+        },
+        "full_name": {
+         "type": "string"
+        },
+        "first_name": {
+         "type": "string"
+        },
+        "last_name": {
+         "type": "string"
+        },
+        "profile_photo": {
+         "type": "string"
+        }
+       }
+      },
+      "1269218": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "type": "string"
+        },
+        "username": {
+         "type": "string"
+        },
+        "full_name": {
+         "type": "string"
+        },
+        "first_name": {
+         "type": "string"
+        },
+        "last_name": {
+         "type": "string"
+        },
+        "profile_photo": {
+         "type": "string"
+        }
+       }
+      },
+      "2014109": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "type": "string"
+        },
+        "username": {
+         "type": "string"
+        },
+        "full_name": {
+         "type": "string"
+        },
+        "first_name": {
+         "type": "string"
+        },
+        "last_name": {
+         "type": "string"
+        },
+        "profile_photo": {
+         "type": "string"
+        }
+       }
+      },
+      "2501463": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "type": "string"
+        },
+        "username": {
+         "type": "string"
+        },
+        "full_name": {
+         "type": "string"
+        },
+        "first_name": {
+         "type": "string"
+        },
+        "last_name": {
+         "type": "string"
+        },
+        "profile_photo": {
+         "type": "string"
+        }
+       }
+      },
+      "3280289": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "type": "string"
+        },
+        "username": {
+         "type": "string"
+        },
+        "full_name": {
+         "type": "string"
+        },
+        "first_name": {
+         "type": "string"
+        },
+        "last_name": {
+         "type": "string"
+        },
+        "profile_photo": {
+         "type": "string"
+        }
+       }
+      },
+      "1361696": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "type": "string"
+        },
+        "username": {
+         "type": "string"
+        },
+        "full_name": {
+         "type": "string"
+        },
+        "first_name": {
+         "type": "string"
+        },
+        "last_name": {
+         "type": "string"
+        },
+        "profile_photo": {
+         "type": "string"
+        }
+       }
+      },
+      "3098748": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "type": "string"
+        },
+        "username": {
+         "type": "string"
+        },
+        "full_name": {
+         "type": "string"
+        },
+        "first_name": {
+         "type": "string"
+        },
+        "last_name": {
+         "type": "string"
+        },
+        "profile_photo": {
+         "type": "string"
+        }
+       }
+      },
+      "130376": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "type": "string"
+        },
+        "username": {
+         "type": "string"
+        },
+        "full_name": {
+         "type": "string"
+        },
+        "first_name": {
+         "type": "string"
+        },
+        "last_name": {
+         "type": "string"
+        },
+        "profile_photo": {
+         "type": "string"
+        }
+       }
+      },
+      "640927": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "type": "string"
+        },
+        "username": {
+         "type": "string"
+        },
+        "full_name": {
+         "type": "string"
+        },
+        "first_name": {
+         "type": "string"
+        },
+        "last_name": {
+         "type": "string"
+        },
+        "profile_photo": {
+         "type": "string"
+        }
+       }
+      },
+      "949272": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "type": "string"
+        },
+        "username": {
+         "type": "string"
+        },
+        "full_name": {
+         "type": "string"
+        },
+        "first_name": {
+         "type": "string"
+        },
+        "last_name": {
+         "type": "string"
+        },
+        "profile_photo": {
+         "type": "string"
+        }
+       }
+      },
+      "142877": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "type": "string"
+        },
+        "username": {
+         "type": "string"
+        },
+        "full_name": {
+         "type": "string"
+        },
+        "first_name": {
+         "type": "string"
+        },
+        "last_name": {
+         "type": "string"
+        },
+        "profile_photo": {
+         "type": "string"
+        }
+       }
+      }
+     }
+    },
+    "viewer_status": {
+     "type": "object",
+     "properties": {
+      "130376": {
+       "type": "object",
+       "properties": {
+        "has_ranked": {
+         "type": "boolean"
+        },
+        "has_bookmarked": {
+         "type": "boolean"
+        }
+       }
+      },
+      "142877": {
+       "type": "object",
+       "properties": {
+        "has_ranked": {
+         "type": "boolean"
+        },
+        "has_bookmarked": {
+         "type": "boolean"
+        }
+       }
+      },
+      "189244": {
+       "type": "object",
+       "properties": {
+        "has_ranked": {
+         "type": "boolean"
+        },
+        "has_bookmarked": {
+         "type": "boolean"
+        }
+       }
+      },
+      "205268": {
+       "type": "object",
+       "properties": {
+        "has_ranked": {
+         "type": "boolean"
+        },
+        "has_bookmarked": {
+         "type": "boolean"
+        }
+       }
+      },
+      "205281": {
+       "type": "object",
+       "properties": {
+        "has_ranked": {
+         "type": "boolean"
+        },
+        "has_bookmarked": {
+         "type": "boolean"
+        }
+       }
+      },
+      "342879": {
+       "type": "object",
+       "properties": {
+        "has_ranked": {
+         "type": "boolean"
+        },
+        "has_bookmarked": {
+         "type": "boolean"
+        }
+       }
+      },
+      "343991": {
+       "type": "object",
+       "properties": {
+        "has_ranked": {
+         "type": "boolean"
+        },
+        "has_bookmarked": {
+         "type": "boolean"
+        }
+       }
+      },
+      "381062": {
+       "type": "object",
+       "properties": {
+        "has_ranked": {
+         "type": "boolean"
+        },
+        "has_bookmarked": {
+         "type": "boolean"
+        }
+       }
+      },
+      "578457": {
+       "type": "object",
+       "properties": {
+        "has_ranked": {
+         "type": "boolean"
+        },
+        "has_bookmarked": {
+         "type": "boolean"
+        }
+       }
+      },
+      "640927": {
+       "type": "object",
+       "properties": {
+        "has_ranked": {
+         "type": "boolean"
+        },
+        "has_bookmarked": {
+         "type": "boolean"
+        }
+       }
+      },
+      "669249": {
+       "type": "object",
+       "properties": {
+        "has_ranked": {
+         "type": "boolean"
+        },
+        "has_bookmarked": {
+         "type": "boolean"
+        }
+       }
+      },
+      "671134": {
+       "type": "object",
+       "properties": {
+        "has_ranked": {
+         "type": "boolean"
+        },
+        "has_bookmarked": {
+         "type": "boolean"
+        }
+       }
+      },
+      "696344": {
+       "type": "object",
+       "properties": {
+        "has_ranked": {
+         "type": "boolean"
+        },
+        "has_bookmarked": {
+         "type": "boolean"
+        }
+       }
+      },
+      "697355": {
+       "type": "object",
+       "properties": {
+        "has_ranked": {
+         "type": "boolean"
+        },
+        "has_bookmarked": {
+         "type": "boolean"
+        }
+       }
+      },
+      "718512": {
+       "type": "object",
+       "properties": {
+        "has_ranked": {
+         "type": "boolean"
+        },
+        "has_bookmarked": {
+         "type": "boolean"
+        }
+       }
+      },
+      "740475": {
+       "type": "object",
+       "properties": {
+        "has_ranked": {
+         "type": "boolean"
+        },
+        "has_bookmarked": {
+         "type": "boolean"
+        }
+       }
+      },
+      "949272": {
+       "type": "object",
+       "properties": {
+        "has_ranked": {
+         "type": "boolean"
+        },
+        "has_bookmarked": {
+         "type": "boolean"
+        }
+       }
+      },
+      "968980": {
+       "type": "object",
+       "properties": {
+        "has_ranked": {
+         "type": "boolean"
+        },
+        "has_bookmarked": {
+         "type": "boolean"
+        }
+       }
+      },
+      "1115150": {
+       "type": "object",
+       "properties": {
+        "has_ranked": {
+         "type": "boolean"
+        },
+        "has_bookmarked": {
+         "type": "boolean"
+        }
+       }
+      },
+      "1223867": {
+       "type": "object",
+       "properties": {
+        "has_ranked": {
+         "type": "boolean"
+        },
+        "has_bookmarked": {
+         "type": "boolean"
+        }
+       }
+      },
+      "1269218": {
+       "type": "object",
+       "properties": {
+        "has_ranked": {
+         "type": "boolean"
+        },
+        "has_bookmarked": {
+         "type": "boolean"
+        }
+       }
+      },
+      "1339138": {
+       "type": "object",
+       "properties": {
+        "has_ranked": {
+         "type": "boolean"
+        },
+        "has_bookmarked": {
+         "type": "boolean"
+        }
+       }
+      },
+      "1361696": {
+       "type": "object",
+       "properties": {
+        "has_ranked": {
+         "type": "boolean"
+        },
+        "has_bookmarked": {
+         "type": "boolean"
+        }
+       }
+      },
+      "1668290": {
+       "type": "object",
+       "properties": {
+        "has_ranked": {
+         "type": "boolean"
+        },
+        "has_bookmarked": {
+         "type": "boolean"
+        }
+       }
+      },
+      "2014109": {
+       "type": "object",
+       "properties": {
+        "has_ranked": {
+         "type": "boolean"
+        },
+        "has_bookmarked": {
+         "type": "boolean"
+        }
+       }
+      },
+      "2501463": {
+       "type": "object",
+       "properties": {
+        "has_ranked": {
+         "type": "boolean"
+        },
+        "has_bookmarked": {
+         "type": "boolean"
+        }
+       }
+      },
+      "2666906": {
+       "type": "object",
+       "properties": {
+        "has_ranked": {
+         "type": "boolean"
+        },
+        "has_bookmarked": {
+         "type": "boolean"
+        }
+       }
+      },
+      "2904687": {
+       "type": "object",
+       "properties": {
+        "has_ranked": {
+         "type": "boolean"
+        },
+        "has_bookmarked": {
+         "type": "boolean"
+        }
+       }
+      },
+      "3098748": {
+       "type": "object",
+       "properties": {
+        "has_ranked": {
+         "type": "boolean"
+        },
+        "has_bookmarked": {
+         "type": "boolean"
+        }
+       }
+      },
+      "3280289": {
+       "type": "object",
+       "properties": {
+        "has_ranked": {
+         "type": "boolean"
+        },
+        "has_bookmarked": {
+         "type": "boolean"
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/playlist-list-view/": {
+  "status": 500,
+  "params": [
+   "list_id",
+   "viewer",
+   "playlists_v2",
+   "vguides",
+   "supports_no_guide_category",
+   "supports_no_guide_city",
+   "supports_collab_guides"
+  ]
+ },
+ "/api/playlist-business-photos/": {
+  "status": 200,
+  "params": [
+   "playlists_v2"
+  ],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "results": {
+     "type": "array",
+     "items": {}
+    }
+   }
+  }
+ },
+ "/api/user/user-referral-link/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "referral_link": {
+     "type": "string"
+    }
+   }
+  }
+ },
+ "/api/user/user-qr-code/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "qr_code": {
+     "type": "string"
+    }
+   }
+  }
+ },
+ "/api/challenge-info/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "info": {
+     "type": "object",
+     "properties": {
+      "body": {
+       "type": "string"
+      },
+      "listItems": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "iconSrc": {
+          "type": "string"
+         },
+         "title": {
+          "type": "string"
+         },
+         "iconName": {
+          "type": "string"
+         }
+        }
+       }
+      },
+      "year": {
+       "type": "integer"
+      },
+      "title": {
+       "type": "string"
+      },
+      "subtitle": {
+       "type": "string"
+      }
+     }
+    },
+    "userPledge": {
+     "type": "integer"
+    }
+   }
+  }
+ },
+ "/api/google-authorization-url/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "authorization_url": {
+     "type": "string"
+    }
+   }
+  }
+ },
+ "/api/gcal-suggestions/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "has_permission": {
+     "type": "boolean"
+    },
+    "results": {
+     "type": "array",
+     "items": {}
+    },
+    "progress": {
+     "type": "object",
+     "properties": {}
+    },
+    "empty_state_text": {
+     "type": "string"
+    }
+   }
+  }
+ },
+ "/api/gcal-suggestions-progress/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "numerator": {
+     "type": "integer"
+    },
+    "denominator": {
+     "type": "integer"
+    }
+   }
+  }
+ },
+ "/api/photo-library-suggestions/": {
+  "status": 200,
+  "params": [
+   "user"
+  ],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "results": {
+     "type": "array",
+     "items": {}
+    },
+    "empty_state_text": {
+     "type": "string"
+    },
+    "progress": {
+     "type": "object",
+     "properties": {
+      "numerator": {
+       "type": "integer"
+      },
+      "denominator": {
+       "type": "integer"
+      }
+     }
+    },
+    "highlight_business_ids": {
+     "type": "array",
+     "items": {}
+    }
+   }
+  }
+ },
+ "/api/photo-library-suggestions-progress/": {
+  "status": 200,
+  "params": [
+   "user"
+  ],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "numerator": {
+     "type": "integer"
+    },
+    "denominator": {
+     "type": "integer"
+    }
+   }
+  }
+ },
+ "/api/onboarding-selections-progress/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "numerator": {
+     "type": "integer"
+    },
+    "denominator": {
+     "type": "integer"
+    }
+   }
+  }
+ },
+ "/api/stripe-information/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "publishable_key": {
+     "type": "string"
+    },
+    "stripe_account_id": {
+     "type": "string"
+    },
+    "sevenrooms_publishable_key": {
+     "nullable": true
+    },
+    "sevenrooms_stripe_account_id": {
+     "nullable": true
+    }
+   }
+  }
+ },
+ "/api/feature-credits-available/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "feature_credits_available": {
+     "type": "integer"
+    },
+    "time_elapsed": {
+     "type": "string"
+    }
+   }
+  }
+ },
+ "/api/creator-subscription-config/": {
+  "status": 405,
+  "params": []
+ },
+ "/api/contact-us-config/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "title": {
+     "type": "string"
+    },
+    "options": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "email": {
+        "type": "string"
+       },
+       "emoji": {
+        "type": "string"
+       },
+       "title": {
+        "type": "string"
+       },
+       "subtitle": {
+        "type": "string"
+       },
+       "external_url": {
+        "type": "string"
+       },
+       "internal_url": {
+        "type": "string"
+       },
+       "callback_func": {
+        "type": "string"
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/creator-application-status/": {
+  "status": 200,
+  "params": [
+   "user"
+  ],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "show_section": {
+     "type": "boolean"
+    },
+    "has_applied": {
+     "type": "boolean"
+    },
+    "can_apply": {
+     "type": "boolean"
+    },
+    "subtitle": {
+     "type": "string"
+    },
+    "subtitle_links": {
+     "type": "object",
+     "properties": {
+      "Creator Terms": {
+       "type": "string"
+      }
+     }
+    },
+    "button_text": {
+     "type": "string"
+    },
+    "checklist": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "text": {
+        "type": "string"
+       },
+       "completed": {
+        "type": "boolean"
+       },
+       "icon_color": {
+        "type": "string"
+       },
+       "text_color": {
+        "type": "string"
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

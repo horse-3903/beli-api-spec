@@ -1,0 +1,88 @@
+{
+ "/api/user/bio/": {
+  "status": 200,
+  "params": [
+   "id"
+  ],
+  "schema": {
+   "type": "string",
+   "description": "empty body when the user has no value"
+  }
+ },
+ "/api/user/member/": {
+  "status": 200,
+  "params": [
+   "id"
+  ],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "count": {
+     "type": "integer"
+    },
+    "next": {
+     "nullable": true
+    },
+    "previous": {
+     "nullable": true
+    },
+    "results": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "string"
+       },
+       "first_name": {
+        "type": "string"
+       },
+       "last_name": {
+        "type": "string"
+       },
+       "full_name": {
+        "type": "string"
+       },
+       "created_dt": {
+        "type": "string"
+       },
+       "username": {
+        "type": "string"
+       },
+       "instagram_url": {
+        "nullable": true
+       },
+       "tiktok_url": {
+        "nullable": true
+       },
+       "photo": {
+        "nullable": true
+       },
+       "profile_photo": {
+        "type": "string"
+       },
+       "public": {
+        "type": "boolean"
+       },
+       "school": {
+        "nullable": true
+       },
+       "company": {
+        "nullable": true
+       },
+       "has_supper_club": {
+        "type": "boolean"
+       },
+       "has_vip": {
+        "type": "boolean"
+       },
+       "is_playlist_eligible": {
+        "type": "boolean"
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

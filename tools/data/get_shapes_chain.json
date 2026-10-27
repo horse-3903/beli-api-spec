@@ -1,0 +1,569 @@
+{
+ "/api/get-bookmark/": {
+  "status": 200,
+  "params": [
+   "user",
+   "category"
+  ],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "Restaurants": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "integer"
+       },
+       "user": {
+        "type": "string"
+       },
+       "business": {
+        "type": "object",
+        "properties": {
+         "id": {
+          "type": "integer"
+         },
+         "place_id": {
+          "type": "string"
+         },
+         "name": {
+          "type": "string"
+         },
+         "status": {
+          "type": "string"
+         },
+         "city": {
+          "type": "string"
+         },
+         "borough": {
+          "type": "string"
+         },
+         "lat": {
+          "type": "number"
+         },
+         "lng": {
+          "type": "number"
+         },
+         "price": {
+          "type": "integer"
+         },
+         "neighborhood": {
+          "nullable": true
+         },
+         "country": {
+          "type": "string"
+         },
+         "website": {
+          "type": "string"
+         },
+         "phone_number": {
+          "type": "string"
+         },
+         "cuisines": {
+          "type": "array",
+          "items": {
+           "type": "string"
+          }
+         },
+         "has_res_links": {
+          "type": "boolean"
+         },
+         "has_delivery_links": {
+          "type": "boolean"
+         },
+         "default_category": {
+          "nullable": true
+         },
+         "quick_link": {
+          "type": "string"
+         },
+         "tz": {
+          "type": "string"
+         },
+         "businesshours_set": {
+          "type": "array",
+          "items": {
+           "type": "object"
+          }
+         },
+         "has_no_show_fee": {
+          "type": "boolean"
+         },
+         "reservation_venue_id": {
+          "nullable": true
+         },
+         "price_key": {
+          "type": "string"
+         },
+         "businessdistinction_set": {
+          "type": "array",
+          "items": {}
+         },
+         "has_cover_photo": {
+          "type": "boolean"
+         },
+         "external_place_key": {
+          "type": "string"
+         }
+        }
+       },
+       "category": {
+        "type": "string"
+       },
+       "start_dt": {
+        "type": "string"
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/user/logged-in/": {
+  "status": 200,
+  "params": [],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "count": {
+     "type": "integer"
+    },
+    "results": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "string"
+       },
+       "first_name": {
+        "type": "string"
+       },
+       "last_name": {
+        "type": "string"
+       },
+       "full_name": {
+        "type": "string"
+       },
+       "phone_no": {
+        "type": "string"
+       },
+       "created_dt": {
+        "type": "string"
+       },
+       "username": {
+        "type": "string"
+       },
+       "instagram_url": {
+        "nullable": true
+       },
+       "tiktok_url": {
+        "nullable": true
+       },
+       "photo": {
+        "nullable": true
+       },
+       "profile_photo": {
+        "type": "string"
+       },
+       "lock_scores": {
+        "type": "boolean"
+       },
+       "public": {
+        "type": "boolean"
+       },
+       "home_city": {
+        "type": "string"
+       },
+       "email": {
+        "type": "string"
+       },
+       "badge": {
+        "nullable": true
+       },
+       "home_valid_city_id": {
+        "type": "integer"
+       },
+       "school_badge": {
+        "nullable": true
+       },
+       "new": {
+        "type": "boolean"
+       },
+       "location_permission": {
+        "type": "boolean"
+       },
+       "notification_permission": {
+        "type": "boolean"
+       },
+       "contacts_permission": {
+        "type": "boolean"
+       },
+       "contacts_permission_status": {
+        "type": "string"
+       },
+       "photo_permission": {
+        "type": "boolean"
+       },
+       "photo_permission_status": {
+        "type": "string"
+       },
+       "has_personalized_recs": {
+        "type": "boolean"
+       },
+       "referrer": {
+        "type": "string"
+       },
+       "referral_link": {
+        "type": "string"
+       },
+       "status": {
+        "type": "string"
+       },
+       "sessions": {
+        "type": "integer"
+       },
+       "bio": {
+        "nullable": true
+       },
+       "reservation_priority": {
+        "type": "integer"
+       },
+       "reservation_priority_points": {
+        "type": "integer"
+       },
+       "sc_nominations": {
+        "type": "integer"
+       },
+       "has_supper_club": {
+        "type": "boolean"
+       },
+       "vip_nominations": {
+        "type": "integer"
+       },
+       "has_vip": {
+        "type": "boolean"
+       },
+       "device": {
+        "type": "string"
+       },
+       "school": {
+        "nullable": true
+       },
+       "school_grad_year": {
+        "nullable": true
+       },
+       "school_leaderboard_access": {
+        "type": "boolean"
+       },
+       "school_referral_link": {
+        "nullable": true
+       },
+       "company": {
+        "nullable": true
+       },
+       "company_referral_link": {
+        "nullable": true
+       },
+       "qr_code": {
+        "type": "string"
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/business/": {
+  "status": 405,
+  "params": [
+   "id"
+  ],
+  "note": ""
+ },
+ "/api/delivery/places-autocomplete/": {
+  "status": 200,
+  "params": [
+   "input",
+   "session_token"
+  ],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "predictions": {
+     "type": "array",
+     "items": {}
+    }
+   }
+  }
+ },
+ "/api/follow/": {
+  "status": 200,
+  "params": [
+   "followed"
+  ],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "count": {
+     "type": "integer"
+    },
+    "results": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "integer"
+       },
+       "follower": {
+        "type": "object",
+        "properties": {
+         "id": {
+          "type": "string"
+         },
+         "first_name": {
+          "type": "string"
+         },
+         "last_name": {
+          "type": "string"
+         },
+         "full_name": {
+          "type": "string"
+         },
+         "created_dt": {
+          "type": "string"
+         },
+         "username": {
+          "type": "string"
+         },
+         "instagram_url": {
+          "nullable": true
+         },
+         "tiktok_url": {
+          "nullable": true
+         },
+         "photo": {
+          "nullable": true
+         },
+         "profile_photo": {
+          "nullable": true
+         },
+         "public": {
+          "type": "boolean"
+         },
+         "school": {
+          "nullable": true
+         },
+         "company": {
+          "nullable": true
+         },
+         "has_supper_club": {
+          "type": "boolean"
+         },
+         "has_vip": {
+          "type": "boolean"
+         },
+         "is_playlist_eligible": {
+          "type": "boolean"
+         }
+        }
+       },
+       "followed": {
+        "type": "object",
+        "properties": {
+         "id": {
+          "type": "string"
+         },
+         "first_name": {
+          "type": "string"
+         },
+         "last_name": {
+          "type": "string"
+         },
+         "full_name": {
+          "type": "string"
+         },
+         "created_dt": {
+          "type": "string"
+         },
+         "username": {
+          "type": "string"
+         },
+         "instagram_url": {
+          "nullable": true
+         },
+         "tiktok_url": {
+          "nullable": true
+         },
+         "photo": {
+          "nullable": true
+         },
+         "profile_photo": {
+          "type": "string"
+         },
+         "public": {
+          "type": "boolean"
+         },
+         "school": {
+          "nullable": true
+         },
+         "company": {
+          "nullable": true
+         },
+         "has_supper_club": {
+          "type": "boolean"
+         },
+         "has_vip": {
+          "type": "boolean"
+         },
+         "is_playlist_eligible": {
+          "type": "boolean"
+         }
+        }
+       },
+       "accept_dt": {
+        "type": "string"
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/business-contact-data/": {
+  "status": 200,
+  "params": [
+   "business",
+   "field"
+  ],
+  "schema": {
+   "type": "object",
+   "properties": {
+    "results": {
+     "type": "object",
+     "properties": {
+      "id": {
+       "type": "integer"
+      },
+      "place_id": {
+       "type": "string"
+      },
+      "name": {
+       "type": "string"
+      },
+      "status": {
+       "type": "string"
+      },
+      "city": {
+       "type": "string"
+      },
+      "borough": {
+       "type": "string"
+      },
+      "lat": {
+       "type": "number"
+      },
+      "lng": {
+       "type": "number"
+      },
+      "price": {
+       "type": "integer"
+      },
+      "neighborhood": {
+       "nullable": true
+      },
+      "country": {
+       "type": "string"
+      },
+      "website": {
+       "type": "string"
+      },
+      "phone_number": {
+       "type": "string"
+      },
+      "cuisines": {
+       "type": "array",
+       "items": {
+        "type": "string"
+       }
+      },
+      "has_res_links": {
+       "type": "boolean"
+      },
+      "has_delivery_links": {
+       "type": "boolean"
+      },
+      "default_category": {
+       "nullable": true
+      },
+      "quick_link": {
+       "type": "string"
+      },
+      "tz": {
+       "type": "string"
+      },
+      "businesshours_set": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "id": {
+          "type": "integer"
+         },
+         "open_day": {
+          "type": "integer"
+         },
+         "close_day": {
+          "type": "integer"
+         },
+         "open_time": {
+          "type": "string"
+         },
+         "close_time": {
+          "type": "string"
+         },
+         "created_dt": {
+          "type": "string"
+         },
+         "business": {
+          "type": "integer"
+         }
+        }
+       }
+      },
+      "has_no_show_fee": {
+       "type": "boolean"
+      },
+      "reservation_venue_id": {
+       "nullable": true
+      },
+      "price_key": {
+       "type": "string"
+      },
+      "businessdistinction_set": {
+       "type": "array",
+       "items": {}
+      },
+      "has_cover_photo": {
+       "type": "boolean"
+      },
+      "external_place_key": {
+       "type": "string"
+      }
+     }
+    }
+   }
+  }
+ },
+ "/api/business-address-data/": {
+  "status": 400,
+  "params": [
+   "business",
+   "field"
+  ],
+  "note": "Invalid field"
+ }
+}
