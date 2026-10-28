@@ -89,3 +89,9 @@ beli/
 | Rate limit | Bursts return HTTP 429; space calls 3 to 6 seconds apart |
 
 See [NOTES.md](NOTES.md) for the rest. Unofficial and not affiliated with Beli. Use only your own account.
+
+---
+
+## Disclaimer
+
+**Use at your own risk.** Calling these APIs outside the official app may violate the service's terms and can lead to rate limiting, a suspended or banned account, or loss of data. The authors accept no responsibility for any consequences to your account. Use only your own account, and never share your credentials or tokens.
