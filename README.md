@@ -100,7 +100,7 @@ See [NOTES.md](NOTES.md) for the rest. Unofficial and not affiliated with Beli. 
 
 **What can the Beli API do?** Log in, search restaurants, read and add bookmarks, manage guides and lists, read ratings and rankings, follow friends and check referrals.
 
-**Is there a Beli MCP server?** Not yet in this repo.
+**Is there a Beli MCP server?** Yes: [beli-mcp](https://github.com/horse-3903/beli-mcp) lets Claude and other AI assistants use your Beli account through this API.
 
 **Which Beli version is documented?** Beli app 10.2.0.
 
@@ -114,5 +114,6 @@ See [NOTES.md](NOTES.md) for the rest. Unofficial and not affiliated with Beli. 
 
 ## Related
 
+- [beli-mcp](https://github.com/horse-3903/beli-mcp): MCP server built on this spec
 - [tabelog-api-spec](https://github.com/horse-3903/tabelog-api-spec): the sibling unofficial API spec
 - [openapi-catalog](https://github.com/horse-3903/openapi-catalog): index of all unofficial API specs
