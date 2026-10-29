@@ -92,6 +92,20 @@ See [NOTES.md](NOTES.md) for the rest. Unofficial and not affiliated with Beli. 
 
 ---
 
+## FAQ
+
+**Is there an official Beli API?** No. Beli has no public developer API. This repo documents the private API the Beli app uses, reverse engineered from the app, so it can change without notice.
+
+**Is there a Beli SDK?** This repo ships the Beli OpenAPI (Swagger) spec, from which you can generate a Beli API client or SDK in Python, TypeScript, Go and more with `openapi-generator`. The [beli-api](https://github.com/ProjectBarks/beli-api) repo also has ready-made SDKs.
+
+**What can the Beli API do?** Log in, search restaurants, read and add bookmarks, manage guides and lists, read ratings and rankings, follow friends and check referrals.
+
+**Is there a Beli MCP server?** Not yet in this repo.
+
+**Which Beli version is documented?** Beli app 10.2.0.
+
+---
+
 ## Disclaimer
 
 **Use at your own risk.** Calling these APIs outside the official app may violate the service's terms and can lead to rate limiting, a suspended or banned account, or loss of data. The authors accept no responsibility for any consequences to your account. Use only your own account, and never share your credentials or tokens.
