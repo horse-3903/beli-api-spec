@@ -6,8 +6,8 @@ Unofficial Beli API documentation as an OpenAPI 3.1 spec: 433 operations for the
 
 [![OpenAPI](https://img.shields.io/badge/OpenAPI-3.1-6BA539?style=flat-square&logo=openapiinitiative&logoColor=white)](beli-openapi.yaml)
 [![Python](https://img.shields.io/badge/Python_3.10-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
-[![License](https://img.shields.io/github/license/horse-3903/openapi-catalog?style=flat-square)](../LICENSE)
-[![Last Commit](https://img.shields.io/github/last-commit/horse-3903/openapi-catalog?style=flat-square)](../../../commits)
+[![License](https://img.shields.io/github/license/horse-3903/beli-api-spec?style=flat-square)](LICENSE)
+[![Last Commit](https://img.shields.io/github/last-commit/horse-3903/beli-api-spec?style=flat-square)](../../commits)
 
 </div>
 
@@ -49,15 +49,15 @@ Unofficial Beli API documentation as an OpenAPI 3.1 spec: 433 operations for the
 Open `beli-openapi.yaml` (or `beli-openapi.json`) in Swagger UI, Postman or Insomnia, or generate a client:
 
 ```bash
-npx @openapitools/openapi-generator-cli generate -i beli/beli-openapi.yaml -g python -o beli-client
+npx @openapitools/openapi-generator-cli generate -i beli-openapi.yaml -g python -o beli-client
 ```
 
 ### Regenerate
 
 ```bash
-python beli/tools/build_openapi.py
-python beli/tools/merge_shapes.py
-openapi-spec-validator beli/beli-openapi.yaml
+python tools/build_openapi.py
+python tools/merge_shapes.py
+openapi-spec-validator beli-openapi.yaml
 ```
 
 ---
@@ -65,7 +65,7 @@ openapi-spec-validator beli/beli-openapi.yaml
 ## Project Structure
 
 ```
-beli/
+beli-api-spec/
 ├── beli-openapi.yaml        # OpenAPI 3.1 spec
 ├── beli-openapi.json        # same spec as JSON
 ├── NOTES.md                 # auth, feature flags, verified versus inferred
@@ -95,3 +95,10 @@ See [NOTES.md](NOTES.md) for the rest. Unofficial and not affiliated with Beli. 
 ## Disclaimer
 
 **Use at your own risk.** Calling these APIs outside the official app may violate the service's terms and can lead to rate limiting, a suspended or banned account, or loss of data. The authors accept no responsibility for any consequences to your account. Use only your own account, and never share your credentials or tokens.
+
+---
+
+## Related
+
+- [tabelog-api-spec](https://github.com/horse-3903/tabelog-api-spec): the sibling unofficial API spec
+- [openapi-catalog](https://github.com/horse-3903/openapi-catalog): index of all unofficial API specs

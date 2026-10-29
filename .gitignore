@@ -1,0 +1,6 @@
+.env
+*state*.json
+*.apk
+*.apkm
+*.zip
+__pycache__/

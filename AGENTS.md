@@ -13,9 +13,9 @@ OpenAPI 3.1 spec for the Beli app backend (`com.beliapp.myapp` 10.2.0), reverse 
 ## Rebuild order
 
 ```bash
-python beli/tools/build_openapi.py
-python beli/tools/merge_shapes.py
-openapi-spec-validator beli/beli-openapi.yaml
+python tools/build_openapi.py
+python tools/merge_shapes.py
+openapi-spec-validator beli-openapi.yaml
 ```
 
 ## Conventions
@@ -27,7 +27,7 @@ openapi-spec-validator beli/beli-openapi.yaml
 
 ## Rules
 
-- Never commit tokens, `.env` files, saved login state, APKs or zips. The root `.gitignore` covers these.
+- Never commit tokens, `.env` files, saved login state, APKs or zips. `.gitignore` covers these.
 - Specs come from code, not live traffic unless stated. Do not mark fields required or nullable unless verified, and say clearly what is verified versus inferred.
 - After changing a spec, validate it with `openapi-spec-validator`. Keep YAML and JSON in sync by regenerating both from the scripts, never by editing one by hand.
 - Do not use em dashes in any text. Keep commit messages to one short line, with no Co-Authored-By trailers. Only commit when asked.
