@@ -116,4 +116,3 @@ See [NOTES.md](NOTES.md) for the rest. Unofficial and not affiliated with Beli. 
 
 - [beli-mcp](https://github.com/horse-3903/beli-mcp): MCP server built on this spec
 - [tabelog-api-spec](https://github.com/horse-3903/tabelog-api-spec): the sibling unofficial API spec
-- [openapi-catalog](https://github.com/horse-3903/openapi-catalog): index of all unofficial API specs
